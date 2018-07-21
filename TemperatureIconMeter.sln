@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureIconMeter", "TemperatureIconMeter\TemperatureIconMeter.csproj", "{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TemperatureIconMeterSetup", "TemperatureIconMeterSetup\TemperatureIconMeterSetup.vdproj", "{24041456-7E4F-4C61-9B13-CAB02D576284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24041456-7E4F-4C61-9B13-CAB02D576284}.Debug|Any CPU.ActiveCfg = Debug
+		{24041456-7E4F-4C61-9B13-CAB02D576284}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B910E3F-74D2-4018-9E50-2CD4C1EF4E90}
+	EndGlobalSection
+EndGlobal

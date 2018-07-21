@@ -3,3 +3,7 @@
 ################################################################################
 
 /TemperatureIconMeterSetup/Release
+/TemperatureIconMeter/obj
+/TemperatureIconMeter/bin
+/packages/TaskScheduler.2.8.1
+/.vs
