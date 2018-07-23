@@ -21,18 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2DF79106DAFDC7B76F8159D4C891E7A1"
-        "OwnerKey" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_31EE92614F38CE8B39CE612629763CCA"
-        "OwnerKey" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_38C70D4E1BE74A76A046F2E2D8A3EB15"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -45,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4975ED690B71936BC237FDA192819CD9"
+        "OwnerKey" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_68B11616257A3F12145E9073F2765221"
         "OwnerKey" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_68B11616257A3F12145E9073F2765221"
-        "OwnerKey" = "8:_31EE92614F38CE8B39CE612629763CCA"
+        "OwnerKey" = "8:_F52228DE9A2879827D702918FDFF1140"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_6A67D8FCA2BD8D3D08A21A12DECB4577"
-        "OwnerKey" = "8:_31EE92614F38CE8B39CE612629763CCA"
+        "OwnerKey" = "8:_F52228DE9A2879827D702918FDFF1140"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -75,8 +69,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C5B430A5589A456CB3969745C2D36519"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_F52228DE9A2879827D702918FDFF1140"
+        "OwnerKey" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,13 +82,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2DF79106DAFDC7B76F8159D4C891E7A1"
+        "OwnerKey" = "8:_4975ED690B71936BC237FDA192819CD9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_31EE92614F38CE8B39CE612629763CCA"
+        "OwnerKey" = "8:_F52228DE9A2879827D702918FDFF1140"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -241,14 +235,34 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2DF79106DAFDC7B76F8159D4C891E7A1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_38C70D4E1BE74A76A046F2E2D8A3EB15"
+            {
+            "SourcePath" = "8:..\\TemperatureIconMeter\\images\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4975ED690B71936BC237FDA192819CD9"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:OpenHardwareMonitorLib, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2DF79106DAFDC7B76F8159D4C891E7A1"
+                    "_4975ED690B71936BC237FDA192819CD9"
                     {
                     "Name" = "8:OpenHardwareMonitorLib.dll"
                     "Attributes" = "3:512"
@@ -270,57 +284,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_31EE92614F38CE8B39CE612629763CCA"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Win32.TaskScheduler, Version=2.8.1.0, Culture=neutral, PublicKeyToken=c416bc1b32d97233, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_31EE92614F38CE8B39CE612629763CCA"
-                    {
-                    "Name" = "8:Microsoft.Win32.TaskScheduler.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Win32.TaskScheduler.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_38C70D4E1BE74A76A046F2E2D8A3EB15"
-            {
-            "SourcePath" = "8:..\\TemperatureIconMeter\\images\\icon.ico"
-            "TargetName" = "8:icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_68B11616257A3F12145E9073F2765221"
@@ -385,10 +348,21 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C5B430A5589A456CB3969745C2D36519"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F52228DE9A2879827D702918FDFF1140"
             {
-            "SourcePath" = "8:..\\TemperatureIconMeter\\images\\icon_large.ico"
-            "TargetName" = "8:icon_large.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Win32.TaskScheduler, Version=2.8.1.0, Culture=neutral, PublicKeyToken=c416bc1b32d97233, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F52228DE9A2879827D702918FDFF1140"
+                    {
+                    "Name" = "8:Microsoft.Win32.TaskScheduler.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Win32.TaskScheduler.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
             "Condition" = "8:"
@@ -402,7 +376,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -473,7 +447,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Temperature Icon Meter"
         "ProductCode" = "8:{FFC8956D-51A2-4A13-A0BA-E0DE1418967C}"
-        "PackageCode" = "8:{83A6A957-E7D4-4998-9E1D-FAD07EBAD955}"
+        "PackageCode" = "8:{84F578FC-0030-495C-BBE6-B92DE8DD1358}"
         "UpgradeCode" = "8:{C6CEB1C7-EA76-4377-8A4A-878BDE43AC67}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -490,7 +464,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Temperature Icon Meter"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_C5B430A5589A456CB3969745C2D36519"
+        "ARPPRODUCTICON" = "8:_38C70D4E1BE74A76A046F2E2D8A3EB15"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -604,7 +578,7 @@
             "Target" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
             "Folder" = "8:_65B409985F7748CC84C7867CF75D49B6"
             "WorkingFolder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
-            "Icon" = "8:_C5B430A5589A456CB3969745C2D36519"
+            "Icon" = "8:_38C70D4E1BE74A76A046F2E2D8A3EB15"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6BEBFFE7D0564174AA98C575786DF96B"
@@ -618,7 +592,7 @@
             "Target" = "8:_40FDED0FFA9F4E4493808BB350F8DC9D"
             "Folder" = "8:_BE9F271E5EC84DFA827D95C07B8150A6"
             "WorkingFolder" = "8:_653C7209930E41BB8C5F2761DE8C1D87"
-            "Icon" = "8:_C5B430A5589A456CB3969745C2D36519"
+            "Icon" = "8:_38C70D4E1BE74A76A046F2E2D8A3EB15"
             "Feature" = "8:"
             }
         }
