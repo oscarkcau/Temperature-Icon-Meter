@@ -7,3 +7,8 @@
 /TemperatureIconMeter/bin
 /packages/TaskScheduler.2.8.1
 /.vs
+/TemperatureIconMeterSetup64/Release
+/TemperatureIconMeterSetup/Debug
+/TemperatureIconMeterWPF/bin
+/TemperatureIconMeterWPF/obj
+/packages
