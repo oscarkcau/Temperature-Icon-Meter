@@ -35,7 +35,7 @@ namespace TemperatureIconMeterWPF
 		string _tooltip;
 
 		// public property
-		public Settings Settings { get => settings; set { settings = value; SetSensorRecords(settings.SensorRecords); } }
+		public Settings Settings { get => settings; set { settings = value; SetSensorRecords(settings.SensorRecordsList); } }
 		public ObservableCollection<HardwareTreeNode> HardwareTreeNodes { get; } = new ObservableCollection<HardwareTreeNode>();
 		public Icon DefaultTrayIcon {
 			get => _defaultTrayIcon;
@@ -68,9 +68,9 @@ namespace TemperatureIconMeterWPF
 		}
 
 		// public methods
-		public Dictionary<(string, string), (bool, string)> GetSensorRecords()
+		public List<SensorRecord> GetSensorRecords()
 		{
-			var records = new Dictionary<(string, string), (bool, string)>();
+			var records = new List<SensorRecord>();
 
 			// loop over all sensors
 			foreach (var h in HardwareTreeNodes)
@@ -81,13 +81,14 @@ namespace TemperatureIconMeterWPF
 				{
 					// store all selected sensors
 					string sensorName = s.Name;
-					records.Add((hardwareName, sensorName), (s.IsSelected, s.DisplayName));
+					records.Add(
+						new SensorRecord(hardwareName, sensorName, s.IsSelected, s.DisplayName));
 				}
 			}
 
 			return records;
 		}
-		public void SetSensorRecords(Dictionary<(string, string), (bool isSelected, string displayName)> records)
+		public void SetSensorRecords(List<SensorRecord> records)
 		{
 			// loop over all sensors
 			foreach (var h in HardwareTreeNodes)
@@ -98,14 +99,17 @@ namespace TemperatureIconMeterWPF
 				{
 					string sensorName = s.Name;
 
-					var key = (hardwareName, sensorName);
-
-					if (records.ContainsKey(key))
+					try
 					{
-						// set sensor tree node propertiew if records contains the sensor key
-						s.IsSelected = records[key].isSelected;
-						s.DisplayName = records[key].displayName;
+						SensorRecord rec = records.First(
+								r =>
+								r.HardwareName == hardwareName &&
+								r.SensorName == sensorName);
+
+						s.IsSelected = rec.IsSelected;
+						s.DisplayName = rec.DisplayName;
 					}
+					catch (InvalidOperationException) { };
 				}
 			}
 		}
@@ -195,14 +199,10 @@ namespace TemperatureIconMeterWPF
 			// loop over all sensors
 			foreach (var h in HardwareTreeNodes)
 			{
-				string hardwareName = h.Name;
-				
 				foreach (var s in h.Sensors)
 				{
-					string sensorName = s.Name;
-
 					// add current value and corrsponding brush if it is selected in setting
-					if (settings.SensorRecords.ContainsKey((hardwareName, sensorName)))
+					if (s.IsSelected)
 					{
 						list.Add(
 							(s.Value,
@@ -296,14 +296,10 @@ namespace TemperatureIconMeterWPF
 			// loop over all sensors
 			foreach (var h in HardwareTreeNodes)
 			{
-				string hardwareName = h.Name;
-
 				foreach (var s in h.Sensors)
 				{
-					string sensorName = s.Name;
-
 					// add current value and corrsponding brush if it is selected in setting
-					if (settings.SensorRecords.ContainsKey((hardwareName, sensorName)))
+					if (s.IsSelected)
 					{
 						sb.AppendLine($"{s.DisplayName} {s.Value}°C {maxArrow}{s.Max} {minArrow}{s.Min}");
 					}
@@ -318,76 +314,6 @@ namespace TemperatureIconMeterWPF
 
 			// return the text value
 			return sb.ToString().TrimEnd();
-		}
-
-		// INotifyPropertyChanged implementation
-		public event PropertyChangedEventHandler PropertyChanged;
-		protected void SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-		{
-			if (EqualityComparer<T>.Default.Equals(field, value)) return;
-			field = value;
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-
-	class HardwareTreeNode
-	{
-		// private field
-		IHardware hardware;
-
-		// public properties
-		public string Name { get => hardware.Name; }
-		public ObservableCollection<SensorTreeNode> Sensors { get; private set; }
-
-		// constructor
-		public HardwareTreeNode(IHardware hardware)
-		{
-			this.hardware = hardware;
-			this.Sensors = new ObservableCollection<SensorTreeNode>();
-		}
-
-		// publid method
-		public void Update() { hardware.Update(); }
-	}
-
-	class SensorTreeNode : INotifyPropertyChanged
-	{
-		// private field
-		ISensor sensor;
-		HardwareTreeNode _parent;
-		float _min, _max, _value;
-		bool _isSelected = false;
-		string _displayName;
-
-		// public properties
-		public string Name { get => sensor.Name; }
-		public HardwareTreeNode Parent { get => _parent; }
-		public float Min { get => _min; private set => SetField(ref _min, value); }
-		public float Max { get => _max; private set => SetField(ref _max, value); }
-		public float Value { get => _value; private set => SetField(ref _value, value); }
-		public bool IsSelected { get => _isSelected; set => SetField(ref _isSelected, value); }
-		public string DisplayName { get => _displayName; set => SetField(ref _displayName, value); }
-
-		// constructor
-		public SensorTreeNode(ISensor sensor, HardwareTreeNode parent)
-		{
-			this.sensor = sensor;
-			this.DisplayName = sensor.Name;
-
-			this._parent = parent;
-		}
-
-		// public method
-		public void Update()
-		{
-			if (sensor.Min.HasValue) Min = (float)sensor.Min;
-			if (sensor.Max.HasValue) Max = (float)sensor.Max;
-			if (sensor.Value.HasValue) Value = (float)sensor.Value;
-		}
-		public void ResetMinMaxReadings()
-		{
-			sensor.ResetMin();
-			sensor.ResetMax();
 		}
 
 		// INotifyPropertyChanged implementation

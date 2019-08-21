@@ -20,17 +20,13 @@ namespace TemperatureIconMeterWPF
 		public bool UseVerticalBars { get; set; } = false;
 		public bool RunAtStartup { get; set; } = false;
 
-		[XmlIgnore]
-		public Dictionary<(string, string), (bool, string)> SensorRecords { get; set; } = new Dictionary<(string, string), (bool, string)>();
-		public List<(string, string, bool, string)> SensorRecordsList { get; set; } = new List<(string, string, bool, string)>();
+		//[XmlIgnore]
+		//public Dictionary<(string, string), (bool, string)> SensorRecords { get; set; } = new Dictionary<(string, string), (bool, string)>();
+		public List<SensorRecord> SensorRecordsList { get; set; } = new List<SensorRecord>();
 
 		// public methods
 		public Settings Clone()
 		{
-			// clone a new Settings instance
-
-			SensorRecordsToList();
-
 			//serualize to memory stream
 			XmlSerializer serializer = new XmlSerializer(typeof(Settings));
 			MemoryStream memStream = new MemoryStream();
@@ -40,16 +36,11 @@ namespace TemperatureIconMeterWPF
 			memStream.Position = 0;
 			Settings cloned =  ((Settings)serializer.Deserialize(memStream));
 
-			cloned.SensorRecordsFromList();
-
 			return cloned;
 		}
 		public void SaveToFile(string filename)
 		{
 			// serialize settings to xml file
-
-
-			SensorRecordsToList();
 
 			// serialize to file stream
 			XmlSerializer serializer = new XmlSerializer(typeof(Settings));
@@ -73,13 +64,12 @@ namespace TemperatureIconMeterWPF
 				Settings s = (Settings)serializer.Deserialize(reader);
 				reader.Close();
 
-				s.SensorRecordsFromList();
-
 				return s;
 			}
 		}
 
 		// private methods
+		/*
 		private void SensorRecordsToList()
 		{
 			SensorRecordsList = new List<(string, string, bool, string)>();
@@ -103,5 +93,6 @@ namespace TemperatureIconMeterWPF
 					SensorRecords.Add(key, value);
 				}
 		}
+		*/
 	}
 }

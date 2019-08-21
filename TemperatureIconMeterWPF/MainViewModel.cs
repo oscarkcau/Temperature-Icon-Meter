@@ -91,7 +91,7 @@ namespace TemperatureIconMeterWPF
 			//
 
 			// update selected sensors propoerty of setting object
-			Settings.SensorRecords = TemperatureMeter.GetSensorRecords();
+			Settings.SensorRecordsList = TemperatureMeter.GetSensorRecords();
 
 			// update underlying setting object and save settings to file
 			originalSettings = Settings.Clone();

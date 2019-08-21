@@ -91,8 +91,11 @@
     <Compile Include="AboutBox.xaml.cs">
       <DependentUpon>AboutBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HardwareTreeNode.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="SensorRecord.cs" />
+    <Compile Include="SensorTreeNode.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TemperatureMeter.cs" />
     <Compile Include="WindowDisplayNameEditor.xaml.cs">
