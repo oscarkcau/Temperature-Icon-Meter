@@ -28,14 +28,12 @@ namespace TemperatureIconMeterWPF
 		readonly string minArrow = "\u25bc";
 
 		// private fields
-		Settings settings;
 		Computer myComputer = null;
 		DispatcherTimer timer = new DispatcherTimer();
 		Icon _defaultTrayIcon, _mainTrayIcon;
 		string _tooltip;
 
 		// public property
-		public Settings Settings { get => settings; set { settings = value; SetSensorRecords(settings.SensorRecordsList); } }
 		public ObservableCollection<HardwareTreeNode> HardwareTreeNodes { get; } = new ObservableCollection<HardwareTreeNode>();
 		public Icon DefaultTrayIcon {
 			get => _defaultTrayIcon;
@@ -51,15 +49,13 @@ namespace TemperatureIconMeterWPF
 		}
 
 		// constructor
-		public TemperatureMeter(Settings settings)
+		public TemperatureMeter()
 		{
 			// get the default tray icon size
 			systemTrayIconSize = GetSystemMetrics(SM_CXSMICON);
 
 			// initialize the temperature sensor nodes
 			InitSensorNodes();
-
-			Settings = settings;
 
 			// initialize timer and start measurement
 			timer.Tick += new EventHandler(Timer_Tick);
@@ -188,10 +184,12 @@ namespace TemperatureIconMeterWPF
 		}
 		Icon BuildTemperatureMeterIcon()
 		{
+			var settings = Properties.Settings.Default;
+
 			// create brushes for drawing
-			Brush safeBrush = new SolidBrush(settings.SafeColor.ToGDIColor());
-			Brush warningBrush = new SolidBrush(settings.WarningColor.ToGDIColor());
-			Brush dangerBrush = new SolidBrush(settings.DangerColor.ToGDIColor());
+			Brush safeBrush = new SolidBrush(settings.SafeColor);
+			Brush warningBrush = new SolidBrush(settings.WarningColor);
+			Brush dangerBrush = new SolidBrush(settings.DangerColor);
 
 			// create list
 			List<(float, Brush)> list = new List<(float, Brush)>();
@@ -255,7 +253,7 @@ namespace TemperatureIconMeterWPF
 			float barHeight = iconSize / nReadings;
 
 			// render all bars
-			if (settings.UseVerticalBars)
+			if (Properties.Settings.Default.UseVerticalBars)
 			{
 				float left = 0;
 				foreach (var (value, brush) in list)

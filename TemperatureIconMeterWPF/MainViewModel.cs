@@ -15,34 +15,31 @@ namespace TemperatureIconMeterWPF
     class MainViewModel : INotifyPropertyChanged
 	{
 		// private fields
-		string settingsFilename = "";
-		Settings originalSettings;
-		Settings _settings;
 		TemperatureMeter _temperatureMeter;
 
 		// properties
-		public Settings Settings { get => _settings; private set => SetField(ref _settings, value); }
+		public Properties.Settings Settings { get; } = Properties.Settings.Default;
 		public TemperatureMeter TemperatureMeter { get => _temperatureMeter; private set => SetField(ref _temperatureMeter, value); }
 		public int MinTemperature { get => 0; }
 		public int MaxTemperature { get => 100; }
 		public int WarningThreshold {
-			get => _settings.WarningThreshold;
+			get => Settings.WarningThreshold;
 			set
 			{
 				if (value < MinTemperature) value = MinTemperature;
 				if (value > MaxTemperature) value = MaxTemperature;
-				_settings.WarningThreshold = value;
+				Settings.WarningThreshold = value;
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("WarningThreshold"));
 				if (value >= DangerThreshold) DangerThreshold = value + 1;
 			}
 		}
 		public int DangerThreshold {
-			get => _settings.DangerThreshold;
+			get => Settings.DangerThreshold;
 			set
 			{
 				if (value < MinTemperature) value = MinTemperature;
 				if (value > MaxTemperature) value = MaxTemperature;
-				_settings.DangerThreshold = value;
+				Settings.DangerThreshold = value;
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DangerThreshold"));
 				if (value <= WarningThreshold) WarningThreshold = value - 1;
 			}
@@ -56,14 +53,6 @@ namespace TemperatureIconMeterWPF
 		// constructors
 		public MainViewModel()
 		{
-			string loadlDataPath =
-				Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) +
-				Path.DirectorySeparatorChar + "Temperature_Icon_Meter";
-			settingsFilename =
-				loadlDataPath +
-				Path.DirectorySeparatorChar + "settings.xml";
-			System.IO.Directory.CreateDirectory(loadlDataPath);
-
 			// initial all public ICommand objects
 			InitCommands();
 
@@ -91,14 +80,8 @@ namespace TemperatureIconMeterWPF
 			//
 
 			// update selected sensors propoerty of setting object
-			Settings.SensorRecordsList = TemperatureMeter.GetSensorRecords();
-
-			// update underlying setting object and save settings to file
-			originalSettings = Settings.Clone();
-			originalSettings.SaveToFile(this.settingsFilename);
-
-			// assign underlying settings to meter
-			TemperatureMeter.Settings = originalSettings;
+			Settings.SensorRecords = TemperatureMeter.GetSensorRecords();
+			Settings.Save();
 
 			// update autostart setting
 			UpdateAutoStartSetting();
@@ -109,24 +92,18 @@ namespace TemperatureIconMeterWPF
 			// load settings from file and reset meter
 			//
 
-			// load settings and copy to exposed setting instance
-			try
-			{
-				originalSettings = Settings.LoadFromFile(settingsFilename);
-			}
-			catch { originalSettings = new Settings(); }
-			Settings = originalSettings.Clone();
+			// load settings 
+			Settings.Reload();
+			if (Settings.SensorRecords == null) Settings.SensorRecords = new List<SensorRecord>();
 
 			// create meter
-			TemperatureMeter = new TemperatureMeter(originalSettings);
+			TemperatureMeter = new TemperatureMeter();
+
+			// update meter's sensor settings
+			TemperatureMeter.SetSensorRecords(Settings.SensorRecords);
 
 			// update autostart setting
 			UpdateAutoStartSetting();
-
-			// reset existing meter or create new meter 
-			//
-			// to do
-			//
 		}
 		void _CancelSettingsUpdate(object obj = null)
 		{
@@ -134,11 +111,12 @@ namespace TemperatureIconMeterWPF
 			// Cancle setting update
 			//
 
-			// copy underlying settings to exposed instance
-			Settings = originalSettings.Clone();
+			// reload settings from storage
+			Settings.Reload();
+			if (Settings.SensorRecords == null) Settings.SensorRecords = new List<SensorRecord>();
 
-			// update meter setting
-			TemperatureMeter.Settings = originalSettings;
+			// update meter's sensor settings
+			TemperatureMeter.SetSensorRecords(Settings.SensorRecords);
 
 			// raised property changed event as these two values may be updated with underlying settings
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("WarningThreshold"));
@@ -147,7 +125,10 @@ namespace TemperatureIconMeterWPF
 		void _RescanSystem(object obj = null)
 		{
 			// create new temperature meter
-			TemperatureMeter = new TemperatureMeter(originalSettings);
+			TemperatureMeter = new TemperatureMeter();
+
+			// update meter's sensor settings
+			TemperatureMeter.SetSensorRecords(Settings.SensorRecords);
 		}
 		void UpdateAutoStartSetting()
 		{

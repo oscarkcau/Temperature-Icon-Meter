@@ -84,4 +84,19 @@ namespace TemperatureIconMeterWPF
 			window.ShowDialog();
 		}
 	}
+
+	public class DrawingColorToWindowsMediaColor : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+		{
+			System.Drawing.Color c = (System.Drawing.Color)value;
+			return System.Windows.Media.Color.FromArgb(c.A, c.R, c.G, c.B);
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+		{
+			System.Windows.Media.Color c = (System.Windows.Media.Color)value;
+			return System.Drawing.Color.FromArgb(c.A, c.R, c.G, c.B);
+		}
+	}
 }

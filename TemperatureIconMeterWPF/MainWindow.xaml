@@ -11,6 +11,7 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
+        <local:DrawingColorToWindowsMediaColor x:Key="DrawingColorToWindowsMediaColor"/>
         <ContextMenu x:Key="SharedContextMenu" x:Shared="true">
             <MenuItem x:Name="MenuItemSettings" Header="Settings" Click="MenuItemSettings_Click">
                 <MenuItem.Icon>
@@ -96,9 +97,24 @@
 
             <CheckBox Content="Run at Startup" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3" IsChecked="{Binding Settings.RunAtStartup}" Margin="0,4"/>
             <CheckBox Content="Use Vertical Bars" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="3" IsChecked="{Binding Settings.UseVerticalBars}" Margin="0,4"/>
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" SelectedColor="{Binding Settings.DangerColor}" Margin="0,4,0,0"/>
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" SelectedColor="{Binding Settings.WarningColor}" Margin="0,4,0,0"/>
-            <xctk:ColorPicker Grid.Column="2" VerticalAlignment="Center" SelectedColor="{Binding Settings.SafeColor}" Grid.Row="1"/>
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" 
+                SelectedColor="{
+                    Binding Path=Settings.SafeColor, 
+                    Converter={StaticResource DrawingColorToWindowsMediaColor}
+                }" 
+            />
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Margin="0,4,0,0"
+                SelectedColor="{
+                    Binding Path=Settings.WarningColor, 
+                    Converter={StaticResource DrawingColorToWindowsMediaColor}
+                }" 
+            />
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Margin="0,4,0,0"
+                SelectedColor="{
+                    Binding Path=Settings.DangerColor, 
+                    Converter={StaticResource DrawingColorToWindowsMediaColor}
+                }" 
+            />
             <Label x:Name="LabelSafeTemperature" VerticalAlignment="Center"
                    Content="{Binding WarningThreshold}" 
                    ContentStringFormat="Safe Temperature: ≤ {0}°C" Grid.Row="1" 

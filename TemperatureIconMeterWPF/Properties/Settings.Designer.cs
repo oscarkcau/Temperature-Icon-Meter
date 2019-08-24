@@ -22,5 +22,100 @@ namespace TemperatureIconMeterWPF.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
+        public global::System.Drawing.Color SafeColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SafeColor"]));
+            }
+            set {
+                this["SafeColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
+        public global::System.Drawing.Color WarningColor {
+            get {
+                return ((global::System.Drawing.Color)(this["WarningColor"]));
+            }
+            set {
+                this["WarningColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public global::System.Drawing.Color DangerColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DangerColor"]));
+            }
+            set {
+                this["DangerColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int WarningThreshold {
+            get {
+                return ((int)(this["WarningThreshold"]));
+            }
+            set {
+                this["WarningThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("70")]
+        public int DangerThreshold {
+            get {
+                return ((int)(this["DangerThreshold"]));
+            }
+            set {
+                this["DangerThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseVerticalBars {
+            get {
+                return ((bool)(this["UseVerticalBars"]));
+            }
+            set {
+                this["UseVerticalBars"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RunAtStartup {
+            get {
+                return ((bool)(this["RunAtStartup"]));
+            }
+            set {
+                this["RunAtStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<TemperatureIconMeterWPF.SensorRecord> SensorRecords {
+            get {
+                return ((global::System.Collections.Generic.List<TemperatureIconMeterWPF.SensorRecord>)(this["SensorRecords"]));
+            }
+            set {
+                this["SensorRecords"] = value;
+            }
+        }
     }
 }
