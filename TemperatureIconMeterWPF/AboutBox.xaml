@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TemperatureIconMeterWPF"
         x:Class="TemperatureIconMeterWPF.AboutBox"
         mc:Ignorable="d"
-        Title="Icon Meter" Height="211.485" Width="389.479" Icon="icon.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
+        Title="Icon Meter" Height="211.485" Width="389.479" Icon="icon.ico" ResizeMode="NoResize" Background="#FF3D3D3D" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -21,18 +22,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image VerticalAlignment="Top" Source="images/maybe_useless.png" Grid.RowSpan="7" Margin="0"/>
-        <Label x:Name="LabelProductName" Content="Product Name" Grid.Column="1" Padding="10,5,5,0" FontWeight="Bold"/>
-        <Label x:Name="LabelVersion" Content="Version" Grid.Column="1" Grid.Row="1" Padding="10,5,5,0"/>
-        <Label x:Name="LabelCopyright" Content="Copyright" Grid.Column="1" Grid.Row="2" Padding="10,5,5,0"/>
-        <Label x:Name="LabelCompanyName" Content="Company Name" Grid.Column="1" Grid.Row="3" Padding="10,5,5,0"/>
+        <Image VerticalAlignment="Top" Source="images/maybe_useless.png" Grid.RowSpan="5" Margin="0,1,0,0"/>
+        <Label x:Name="LabelProductName" Content="Product Name" Grid.Column="1" Padding="10,5,5,0" FontWeight="Bold" Foreground="#FFCDCDCD"/>
+        <Label x:Name="LabelVersion" Content="Version" Grid.Column="1" Grid.Row="1" Padding="10,5,5,0" Foreground="#FFCDCDCD"/>
+        <Label x:Name="LabelCopyright" Content="Copyright" Grid.Column="1" Grid.Row="2" Padding="10,5,5,0" Foreground="#FFCDCDCD"/>
+        <Label x:Name="LabelCompanyName" Content="Company Name" Grid.Column="1" Grid.Row="3" Padding="10,5,5,0" Foreground="#FFCDCDCD"/>
         <TextBlock Grid.Row="5" TextWrapping="Wrap" Grid.ColumnSpan="2" VerticalAlignment="Center">
-            <Hyperlink NavigateUri="https://github.com/oscarkcau/Temperature-Icon-Meter" RequestNavigate="Hyperlink_RequestNavigate" FontSize="10">
+            <Hyperlink NavigateUri="https://github.com/oscarkcau/Temperature-Icon-Meter" RequestNavigate="Hyperlink_RequestNavigate" FontSize="10" Foreground="#FF77BBFF">
             https://github.com/oscarkcau/Temperature-Icon-Meter
             </Hyperlink>
 
         </TextBlock>
-        <Button x:Name="ButtonClose" Content="Close" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Bottom" Width="75" VerticalContentAlignment="Stretch" Click="ButtonClose_Click"/>
+        <Button x:Name="ButtonClose" Content="{x:Static properties:Resources.Close}" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Bottom" MinWidth="75" VerticalContentAlignment="Stretch" Click="ButtonClose_Click"/>
 
     </Grid>
 </Window>

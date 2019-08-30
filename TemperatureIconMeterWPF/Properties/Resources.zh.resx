@@ -118,66 +118,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutApplication" xml:space="preserve">
-    <value>About Temperature Icon Meter</value>
+    <value>關於 Temperature Icon Meter</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="CloseApplication" xml:space="preserve">
-    <value>Close Temperature Icon Meter</value>
+    <value>關閉 Temperature Icon Meter</value>
   </data>
   <data name="DangerTemperature" xml:space="preserve">
-    <value>Danger Temperature</value>
+    <value>危險溫度</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Display Name</value>
+    <value>顯示名稱</value>
   </data>
   <data name="Hardware" xml:space="preserve">
-    <value>Hardware</value>
+    <value>硬體</value>
   </data>
   <data name="ModifyDisplayName" xml:space="preserve">
-    <value>Modify Display Name</value>
+    <value>修改顯示名稱</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>確定</value>
   </data>
   <data name="RescanSystem" xml:space="preserve">
-    <value>Rescan System</value>
+    <value>重新掃描系統</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>重置</value>
   </data>
   <data name="ResetMinMaxReadings" xml:space="preserve">
-    <value>Reset Min/Max Readings</value>
+    <value>重置最小/最大讀數</value>
   </data>
   <data name="RunatStartup" xml:space="preserve">
-    <value>Run at Startup</value>
+    <value>在啟動時運行</value>
   </data>
   <data name="SafeTemperature" xml:space="preserve">
-    <value>Safe Temperature</value>
+    <value>安全溫度</value>
   </data>
   <data name="Sensor" xml:space="preserve">
-    <value>Sensor</value>
+    <value>傳感器</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="TemperatureSensors" xml:space="preserve">
-    <value>Temperature Sensors</value>
+    <value>溫度傳感器</value>
   </data>
   <data name="UseVerticalBars" xml:space="preserve">
-    <value>Use Vertical Bars</value>
+    <value>使用垂直條</value>
   </data>
   <data name="WarningTemperature" xml:space="preserve">
-    <value>Warning Temperature</value>
+    <value>警告溫度</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language:</value>
+    <value>語言:</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>關閉</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Version</value>
+    <value>版本</value>
   </data>
 </root>

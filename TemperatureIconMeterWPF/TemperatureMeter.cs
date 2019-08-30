@@ -127,9 +127,9 @@ namespace TemperatureIconMeterWPF
 			// update icon image and tooltip of main tray icon
 			if (MainTrayIcon != null && MainTrayIcon != DefaultTrayIcon)
 				DestroyIcon(MainTrayIcon.Handle);
-			MainTrayIcon = BuildTemperatureMeterIcon();
+			MainTrayIcon = BuildIcon();
 
-			Tooltip = BuildLogicalProcessorTooltip();
+			Tooltip = BuildTooltip();
 		}
 
 		// private methods
@@ -182,7 +182,7 @@ namespace TemperatureIconMeterWPF
 				}
 			}
 		}
-		Icon BuildTemperatureMeterIcon()
+		Icon BuildIcon()
 		{
 			var settings = Properties.Settings.Default;
 
@@ -283,7 +283,7 @@ namespace TemperatureIconMeterWPF
 
 			return System.Drawing.Icon.FromHandle(bmp.GetHicon());
 		}
-		string BuildLogicalProcessorTooltip()
+		string BuildTooltip()
 		{
 			// build notify icon's tooltip text
 

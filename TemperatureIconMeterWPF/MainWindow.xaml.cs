@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,6 +38,13 @@ namespace TemperatureIconMeterWPF
 			var uri = new Uri(@"pack://application:,,,/icon.ico", UriKind.RelativeOrAbsolute);
 			Stream iconStream = Application.GetResourceStream(uri).Stream;
 			vm.TemperatureMeter.DefaultTrayIcon = new System.Drawing.Icon(iconStream);
+
+			// initial ComboBox for language selection
+			ResourceSet resourceSet =
+				Properties.LanguageResource.ResourceManager.GetResourceSet(
+					CultureInfo.CurrentUICulture, true, true
+					);
+			cmbLanguage.ItemsSource = resourceSet;
 		}
 
 		// event handlers
@@ -57,6 +66,20 @@ namespace TemperatureIconMeterWPF
 		}
 		private void ButtonOK_Click(object sender, RoutedEventArgs e)
 		{
+			// restart application if languate setting is updated
+			if (Properties.Settings.Default.Language != System.Threading.Thread.CurrentThread.CurrentUICulture.Name)
+			{
+				// set the is restarting flag
+				Properties.Settings.Default.IsRestarting = true;
+				Properties.Settings.Default.Save();
+
+				// start a new instance of application
+				System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+
+				// close the current instance of application
+				Application.Current.Shutdown();
+			}
+
 			this.Hide();
 		}
 		private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -81,6 +104,7 @@ namespace TemperatureIconMeterWPF
 			Hyperlink link = sender as Hyperlink;
 			SensorTreeNode node = link.DataContext as SensorTreeNode;
 			WindowDisplayNameEditor window = new WindowDisplayNameEditor(node);
+			window.Owner = this;
 			window.ShowDialog();
 		}
 	}

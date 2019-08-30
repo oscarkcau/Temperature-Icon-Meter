@@ -6,24 +6,25 @@
         xmlns:local="clr-namespace:TemperatureIconMeterWPF"
         xmlns:tb="http://www.hardcodet.net/taskbar" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="TemperatureIconMeterWPF.MainWindow"
         mc:Ignorable="d"
-        Title="Temperature Icon Meter" Height="420" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="icon.ico" Closing="Window_Closing">
+        xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
+        Title="Temperature Icon Meter" Height="440" Width="400" MinHeight="400" MinWidth="360" WindowStartupLocation="CenterScreen" Icon="icon.ico" Closing="Window_Closing" SizeToContent="Height">
     <Window.DataContext>
         <local:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <local:DrawingColorToWindowsMediaColor x:Key="DrawingColorToWindowsMediaColor"/>
         <ContextMenu x:Key="SharedContextMenu" x:Shared="true">
-            <MenuItem x:Name="MenuItemSettings" Header="Settings" Click="MenuItemSettings_Click">
+            <MenuItem x:Name="MenuItemSettings" Header="{x:Static properties:Resources.Settings}" Click="MenuItemSettings_Click">
                 <MenuItem.Icon>
                     <Image Source="images\cog.png"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem x:Name="MenuItemResetMinMaxReadings" Header="Reset Min/Max Readings" Command="{Binding ResetMinMaxReadings, Mode=OneWay}">
+            <MenuItem x:Name="MenuItemResetMinMaxReadings" Header="{x:Static properties:Resources.ResetMinMaxReadings}" Command="{Binding ResetMinMaxReadings, Mode=OneWay}">
                 <MenuItem.Icon>
                     <Image Source="images\arrow_rotate_clockwise.png"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem x:Name="MenuItemAbout" Header="About Temperature Icon Meter" Click="MenuItemAbout_Click">
+            <MenuItem x:Name="MenuItemAbout" Header="{x:Static properties:Resources.AboutApplication}" Click="MenuItemAbout_Click">
                 <MenuItem.Icon>
                     <Image Source="images\information.png"/>
                 </MenuItem.Icon>
@@ -31,7 +32,7 @@
 
             <Separator />
 
-            <MenuItem x:Name="MenuItemClose" Header="Close" Click="MenuItemClose_Click">
+            <MenuItem x:Name="MenuItemClose" Header="{x:Static properties:Resources.CloseApplication}" Click="MenuItemClose_Click">
                 <MenuItem.Icon>
                     <Image Source="images\cross.png"/>
                 </MenuItem.Icon>
@@ -42,20 +43,33 @@
     <DockPanel>
 
         <DockPanel LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top">
-            <Label Content="Temperature Sensors:" VerticalAlignment="Bottom" Margin="5,0,0,0"/>
-            <Button Content="Rescan System" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="4,1" Command="{Binding RescanSystem, Mode=OneWay}"/>
+            <Label VerticalAlignment="Bottom" Margin="5,0,0,0">
+                <TextBlock>
+                    <Run Text="{x:Static properties:Resources.TemperatureSensors}"/><Run Text=":"/>
+                </TextBlock>
+            </Label>
+            <Button DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="4,1" 
+                    Content="{x:Static properties:Resources.RescanSystem}"
+                    Command="{Binding RescanSystem, Mode=OneWay}" 
+                    />
         </DockPanel>
 
-        <Grid Height="36" DockPanel.Dock="Bottom">
+        <Grid DockPanel.Dock="Bottom" HorizontalAlignment="Right"  Grid.IsSharedSizeScope="True">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Buttons"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="Buttons"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="ButtonCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="75" Margin="8" Command="{Binding CancelSettingsUpdate, Mode=OneWay}" Click="ButtonCancel_Click"/>
-            <Button x:Name="ButtonOK" Content="OK" HorizontalAlignment="Right" Margin="0,8" VerticalAlignment="Center" Width="75" Command="{Binding SaveAndReset, Mode=OneWay}" Click="ButtonOK_Click"/>
+            <Button x:Name="ButtonOK" Grid.Column="0" Margin="4" VerticalAlignment="Center"  MinHeight="24" 
+                    Content="{x:Static properties:Resources.OK}" 
+                    Command="{Binding SaveAndReset, Mode=OneWay}" 
+                    Click="ButtonOK_Click"/>
+            <Button x:Name="ButtonCancel" Grid.Column="1" VerticalAlignment="Center"  MinHeight="24" MinWidth="75" Margin="4" 
+                    Content="{x:Static properties:Resources.Cancel}" 
+                    Command="{Binding CancelSettingsUpdate, Mode=OneWay}" 
+                    Click="ButtonCancel_Click"/>
             <tb:TaskbarIcon x:Name="MainTaskbarIcon" HorizontalAlignment="Left" VerticalAlignment="Top" ContextMenu="{DynamicResource SharedContextMenu}" IconSource="icon.ico" ToolTipText="{Binding TemperatureMeter.Tooltip}"/>
         </Grid>
 
@@ -88,54 +102,82 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <CheckBox Content="Run at Startup" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3" IsChecked="{Binding Settings.RunAtStartup}" Margin="0,4"/>
-            <CheckBox Content="Use Vertical Bars" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="3" IsChecked="{Binding Settings.UseVerticalBars}" Margin="0,4"/>
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" 
+            <Label x:Name="LabelSafeTemperature" VerticalAlignment="Center" Grid.Row="1">
+                <TextBlock>
+                    <Run Text="{x:Static properties:Resources.SafeTemperature}"/><!--
+                 --><Run Text=": ≤ "/><!--
+                 --><Run Text="{Binding Path=WarningThreshold}"/><!--
+                 --><Run Text="°C"/>
+                </TextBlock>
+            </Label>
+
+            <Label x:Name="LabelWarmingTemperature" Grid.Row="2" VerticalAlignment="Center">
+                <TextBlock>
+                    <Run Text="{x:Static properties:Resources.WarningTemperature}"/><!--
+                 --><Run Text=": "/><!--
+                 --><Run Text="{Binding Path=WarningThreshold}"/><!--
+                 --><Run Text=" - "/><!--
+                 --><Run Text="{Binding Path=DangerThreshold}"/><!--
+                 --><Run Text="°C"/>
+                </TextBlock>
+            </Label>
+            <Label x:Name="LabelDangerTemperature" Grid.Row="3" VerticalAlignment="Center">
+                <TextBlock>
+                    <Run Text="{x:Static properties:Resources.DangerTemperature}"/><!--
+                 --><Run Text=": ≥ "/><!--
+                 --><Run Text="{Binding Path=DangerThreshold}"/><!--
+                 --><Run Text="°C"/>
+                </TextBlock>            
+            </Label>
+            <Slider Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding WarningThreshold}"/>
+            <Slider Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding DangerThreshold}"/>
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" MinWidth="80"
                 SelectedColor="{
                     Binding Path=Settings.SafeColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Margin="0,4,0,0"
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
                 SelectedColor="{
                     Binding Path=Settings.WarningColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Margin="0,4,0,0"
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
                 SelectedColor="{
                     Binding Path=Settings.DangerColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
-            <Label x:Name="LabelSafeTemperature" VerticalAlignment="Center"
-                   Content="{Binding WarningThreshold}" 
-                   ContentStringFormat="Safe Temperature: ≤ {0}°C" Grid.Row="1" 
-                   />
-            <Label x:Name="LabelWarmingTemperature" Grid.Row="2" VerticalAlignment="Center">
-                <TextBlock>
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="Warning Temperature: {0} - {1}°C">
-                            <Binding Path="WarningThreshold" />
-                            <Binding Path="DangerThreshold" />
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-            </Label>
-            <Label x:Name="LabelDangerTemperature" Grid.Row="3" VerticalAlignment="Center"
-                Content="{Binding DangerThreshold}" 
-                ContentStringFormat="Danger Temperature: ≥ {0}°C" 
-             />
-            <Slider Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding WarningThreshold}"/>
-            <Slider Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding DangerThreshold}"/>
+            
+            <CheckBox Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="3"  Margin="0,4"
+                      Content="{x:Static properties:Resources.UseVerticalBars}"
+                      IsChecked="{Binding Settings.UseVerticalBars}"/>
+            <CheckBox Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,4"
+                      Content="{x:Static properties:Resources.RunatStartup}"
+                      IsChecked="{Binding Settings.RunAtStartup}" />
+
             <Line Grid.Row="6" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
+            
+            <Label Grid.Column="0" Grid.Row="7" VerticalContentAlignment="Center" Margin="0,0,0,4"
+               Content="{x:Static properties:Resources.Language}"/>
+            <ComboBox Name="cmbLanguage" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
+                  SelectedValue="{Binding Source={x:Static properties:Settings.Default}, Path=Language}"
+                  SelectedValuePath="Key"
+                  DisplayMemberPath="Value" Margin="4,2"
+                  />
+
+            <Line Grid.Row="8" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
+
         </Grid>
         <TreeView x:Name="TreeViewMain" ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}" Margin="5,0">
             <TreeView.Resources>
@@ -150,15 +192,16 @@
                                 <MultiBinding StringFormat=" {0} [{1}°C ▲{2} ▼{3}]">
                                     <Binding Path="Name" />
                                     <Binding Path="Value" />
-                                    <Binding Path="Min" />
                                     <Binding Path="Max" />
+                                    <Binding Path="Min" />
                                 </MultiBinding>
                             </TextBlock.Text>
                         </TextBlock>
                         <TextBlock Margin="5,0,0,0">
                             <Hyperlink Click="SensorTreeNodeHyperlink_Click">
-                                Display Name:
-                                <Run Text="{Binding Path=DisplayName}" />
+                                <Run Text="{x:Static properties:Resources.DisplayName}"/><!--
+                             --><Run Text=": "/><!--
+                             --><Run Text="{Binding Path=DisplayName}" />
                             </Hyperlink>
                         </TextBlock>
                     </StackPanel>

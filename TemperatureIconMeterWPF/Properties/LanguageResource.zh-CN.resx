@@ -117,67 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutApplication" xml:space="preserve">
-    <value>About Temperature Icon Meter</value>
+  <data name="en" xml:space="preserve">
+    <value>英语</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="ja-JP" xml:space="preserve">
+    <value>日语</value>
   </data>
-  <data name="CloseApplication" xml:space="preserve">
-    <value>Close Temperature Icon Meter</value>
+  <data name="zh" xml:space="preserve">
+    <value>繁体中文</value>
   </data>
-  <data name="DangerTemperature" xml:space="preserve">
-    <value>Danger Temperature</value>
-  </data>
-  <data name="DisplayName" xml:space="preserve">
-    <value>Display Name</value>
-  </data>
-  <data name="Hardware" xml:space="preserve">
-    <value>Hardware</value>
-  </data>
-  <data name="ModifyDisplayName" xml:space="preserve">
-    <value>Modify Display Name</value>
-  </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="RescanSystem" xml:space="preserve">
-    <value>Rescan System</value>
-  </data>
-  <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="ResetMinMaxReadings" xml:space="preserve">
-    <value>Reset Min/Max Readings</value>
-  </data>
-  <data name="RunatStartup" xml:space="preserve">
-    <value>Run at Startup</value>
-  </data>
-  <data name="SafeTemperature" xml:space="preserve">
-    <value>Safe Temperature</value>
-  </data>
-  <data name="Sensor" xml:space="preserve">
-    <value>Sensor</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="TemperatureSensors" xml:space="preserve">
-    <value>Temperature Sensors</value>
-  </data>
-  <data name="UseVerticalBars" xml:space="preserve">
-    <value>Use Vertical Bars</value>
-  </data>
-  <data name="WarningTemperature" xml:space="preserve">
-    <value>Warning Temperature</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language:</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>Version</value>
+  <data name="zh-CN" xml:space="preserve">
+    <value>简体中文</value>
   </data>
 </root>

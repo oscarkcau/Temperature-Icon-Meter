@@ -25,12 +25,11 @@ namespace TemperatureIconMeterWPF
 		public AboutBox()
 		{
 			InitializeComponent();
-			this.Title = String.Format("About {0}", AssemblyTitle);
+			this.Title = Properties.Resources.AboutApplication;
 			this.LabelProductName.Content = AssemblyProduct;
-			this.LabelVersion.Content = String.Format("Version {0}", AssemblyVersion);
+			this.LabelVersion.Content = String.Format("{0} {1}", Properties.Resources.Version, AssemblyVersion);
 			this.LabelCopyright.Content = AssemblyCopyright;
 			this.LabelCompanyName.Content = AssemblyCompany;
-
 		}
 
 		#region Assembly Attribute Accessors
