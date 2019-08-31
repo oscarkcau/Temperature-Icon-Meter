@@ -148,12 +148,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_67DF4D2DF7C54C74B7D4E50751F34ABB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_920021249C084602B0C4340E54F32DD7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -161,6 +155,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6E84924DCBD74380930D15BE49623FDD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_67DF4D2DF7C54C74B7D4E50751F34ABB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -896,7 +896,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Temperature Icon Meter"
         "ProductCode" = "8:{287DEF71-522A-443F-86C9-951331281DAD}"
-        "PackageCode" = "8:{51472A3C-9C40-4A7E-837A-13404F8FCD47}"
+        "PackageCode" = "8:{637E519B-523D-40D3-8957-246D039D7629}"
         "UpgradeCode" = "8:{FB145DD9-BB7A-48B2-9B33-51F31AF67CFB}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -913,7 +913,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Temperature Icon Meter"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_36EB804A74464C99B9507F6999B27F12"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"

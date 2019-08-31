@@ -154,13 +154,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1480E733039B4390BFB2DD771B79C89A"
+        "OwnerKey" = "8:_83A91D08382F45F58610B8EADC550CF9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_83A91D08382F45F58610B8EADC550CF9"
+        "OwnerKey" = "8:_1480E733039B4390BFB2DD771B79C89A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -896,7 +896,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Temperature Icon Meter"
         "ProductCode" = "8:{31A883C4-D8ED-4926-83CB-19921FF7EB9B}"
-        "PackageCode" = "8:{41ECCC1E-6F30-4216-AE05-3F2A077ED5C1}"
+        "PackageCode" = "8:{8E5F19DE-4BC5-4DD3-92C8-DE77E17FD406}"
         "UpgradeCode" = "8:{C6CEB1C7-EA76-4377-8A4A-878BDE43AC67}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -913,7 +913,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Temperature Icon Meter"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_73908BF58DD24CE5B297D296B504DA57"
         "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
