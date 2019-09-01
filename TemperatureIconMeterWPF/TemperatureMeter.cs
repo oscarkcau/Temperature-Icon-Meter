@@ -142,34 +142,49 @@ namespace TemperatureIconMeterWPF
 				MainboardEnabled = true,
 				HDDEnabled = true,
 				GPUEnabled = true,
-				RAMEnabled = true
+				RAMEnabled = true,
+				FanControllerEnabled = true
 			};
 			myComputer.Open();
 
 			// loop over all hardware objects
 			foreach (var h in myComputer.Hardware)
 			{
-				// skip hardware if it has NO temperature sensor
-				if (h.Sensors.All(s => s.SensorType != SensorType.Temperature)) continue;
-
-				// create hardware tree node
-				var hNode = new HardwareTreeNode(h);
-				HardwareTreeNodes.Add(hNode);
-
-				// get collection of all temperature sensors of current hardware
-				var TemperatureSensors = h.Sensors
-					.Where(s => s.SensorType == SensorType.Temperature)
-					.OrderBy(s => s.Name);
-
-				// loop over all temperature sensors
-				foreach (var s in TemperatureSensors)
-				{
-					// create sensor tree node
-					var sNode = new SensorTreeNode(s, hNode);
-					hNode.Sensors.Add(sNode);
-				}
+				SacnHardware(h);
 			}
 		}
+		void SacnHardware(IHardware h)
+		{
+			// update first to ensure all temperature sensors were created
+			h.Update();
+
+			// scan any sub hardware recursively
+			foreach (var sub in h.SubHardware)
+			{
+				SacnHardware(sub);
+			}
+
+			// skip hardware if it has NO temperature sensor
+			if (h.Sensors.All(s => s.SensorType != SensorType.Temperature)) return;
+
+			// create hardware tree node
+			var hNode = new HardwareTreeNode(h);
+			HardwareTreeNodes.Add(hNode);
+
+			// get collection of all temperature sensors of current hardware
+			var TemperatureSensors = h.Sensors
+				.Where(s => s.SensorType == SensorType.Temperature)
+				.OrderBy(s => s.Name);
+
+			// loop over all temperature sensors
+			foreach (var s in TemperatureSensors)
+			{
+				// create sensor tree node
+				var sNode = new SensorTreeNode(s, hNode);
+				hNode.Sensors.Add(sNode);
+			}
+		}   
+
 		void UpdateReadings()
 		{
 			foreach (var h in HardwareTreeNodes)
@@ -331,5 +346,14 @@ namespace TemperatureIconMeterWPF
 			return System.Drawing.Color.FromArgb(c.A, c.R, c.G, c.B);
 		}
 
+	}
+
+	public static class IHardwareExtensions
+	{
+		public static string GetFullName(this IHardware h)
+		{
+			if (h.Parent != null) return h.Parent.GetFullName() + "/" + h.Name;
+			return h.Name;
+		}
 	}
 }

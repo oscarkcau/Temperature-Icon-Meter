@@ -14,7 +14,7 @@ namespace TemperatureIconMeterWPF
         readonly IHardware hardware;
 
         // public properties
-        public string Name { get => hardware.Name; }
+        public string Name { get => hardware.GetFullName(); }
         public ObservableCollection<SensorTreeNode> Sensors { get; private set; }
 
         // constructor
