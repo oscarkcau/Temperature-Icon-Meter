@@ -72,8 +72,7 @@
                     Click="ButtonCancel_Click"/>
             <tb:TaskbarIcon x:Name="MainTaskbarIcon" 
                             ContextMenu="{DynamicResource SharedContextMenu}" 
-                            IconSource="icon.ico" 
-                           >
+                            IconSource="icon.ico" >
                 <tb:TaskbarIcon.TrayPopup>
                     <local:PopupWindow/>
                 </tb:TaskbarIcon.TrayPopup>

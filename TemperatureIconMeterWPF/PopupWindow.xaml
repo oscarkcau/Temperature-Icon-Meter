@@ -22,17 +22,25 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <TextBlock Grid.Column="0" Text="{Binding Path=Name}" HorizontalAlignment="Left"/>
-                                            <TextBlock Grid.Column="1" Margin="4,0,0,0" FontWeight="Bold" HorizontalAlignment="Right">
+                                            <TextBlock Grid.Column="1" TextAlignment="Right" Foreground="DarkRed">
                                                 <TextBlock.Text>
-                                                    <MultiBinding StringFormat=" {0}°C ▲{1} ▼{2}">
-                                                        <Binding Path="Value" />
-                                                        <Binding Path="Max" />
-                                                        <Binding Path="Min" />
-                                                    </MultiBinding>
+                                                    <Binding Path="Max" StringFormat="{}▲{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
+                                            <TextBlock Grid.Column="2" TextAlignment="Right" Foreground="RoyalBlue" Margin="4,0,0,0">
+                                                <TextBlock.Text>
+                                                    <Binding Path="Min" StringFormat="{}▼{0}"/>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold" Margin="8,0,0,0">
+                                                <TextBlock.Text>
+                                                    <Binding Path="Value" StringFormat="{}{0}°C"/>
+                                                </TextBlock.Text>
+                                            </TextBlock>                                            
                                         </Grid>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -42,7 +50,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             <Image x:Name="ImageClose" Source="images\cross.png" Stretch="None" 
-                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,0,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,0,0"
                    MouseUp="ImageClose_MouseUp" TouchUp="ImageClose_TouchUp" />
         </Grid>
     </Border>
