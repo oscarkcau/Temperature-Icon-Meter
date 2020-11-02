@@ -8,7 +8,7 @@
         xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
              d:DesignHeight="350" d:DesignWidth="200" Loaded="PopupWindowControl_Loaded" Unloaded="PopupWindowControl_Unloaded">
     <Border BorderThickness="1" CornerRadius="8" BorderBrush="DarkGray" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
-        <Grid Width="200"  Margin="8,0,8,8">
+        <Grid Width="220" Margin="8,0,8,8">
             <ItemsControl ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -25,7 +25,21 @@
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="{Binding Path=Name}" HorizontalAlignment="Left"/>
+                                            <TextBlock Grid.Column="0" Text="{Binding Path=DisplayName}" HorizontalAlignment="Left">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsSelected}" Value="true">
+                                                                <Setter Property="Foreground" Value="DarkGreen"/>
+                                                                <Setter Property="FontWeight" Value="Bold"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding ConnectionStatus}" Value="false">
+                                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
                                             <TextBlock Grid.Column="1" TextAlignment="Right" Foreground="DarkRed">
                                                 <TextBlock.Text>
                                                     <Binding Path="Max" StringFormat="{}▲{0}"/>
@@ -36,7 +50,7 @@
                                                     <Binding Path="Min" StringFormat="{}▼{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold" Margin="8,0,0,0">
+                                            <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold"  Margin="8,0,0,0">
                                                 <TextBlock.Text>
                                                     <Binding Path="Value" StringFormat="{}{0}°C"/>
                                                 </TextBlock.Text>
