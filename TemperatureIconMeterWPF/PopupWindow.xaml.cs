@@ -21,31 +21,69 @@ namespace TemperatureIconMeterWPF
 	/// </summary>
 	public partial class PopupWindow : UserControl
 	{
+		// private fields
+		double minReadingTextWidth = 0;
+		double maxReadingTextWidth = 0;
+		double currentReadingTextWidth = 0;
+
+		// constructir
 		public PopupWindow()
 		{
 			InitializeComponent();
 		}
 
-		private void PopupWindowControl_Loaded(object sender, RoutedEventArgs e)
-		{
-
-		}
-
-		private void PopupWindowControl_Unloaded(object sender, RoutedEventArgs e)
-		{
-
-		}
-
+		// event handlers
 		private void ImageClose_MouseUp(object sender, MouseButtonEventArgs e)
 		{
 			var p = this.Parent as Popup;
 			p.IsOpen = false;
 		}
-
 		private void ImageClose_TouchUp(object sender, TouchEventArgs e)
 		{
 			var p = this.Parent as Popup;
 			p.IsOpen = false;
+		}
+		private void MaxTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.WidthChanged)
+			{
+				if (e.NewSize.Width > maxReadingTextWidth)
+				{
+					maxReadingTextWidth = e.NewSize.Width;
+				}
+				else
+				{
+					((TextBlock)sender).Width = maxReadingTextWidth;
+				}
+			}
+		}
+		private void MinTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.WidthChanged)
+			{
+				if (e.NewSize.Width > minReadingTextWidth)
+				{
+					minReadingTextWidth = e.NewSize.Width;
+				}
+				else
+				{
+					((TextBlock)sender).Width = minReadingTextWidth;
+				}
+			}
+		}
+		private void CurrentTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.WidthChanged)
+			{
+				if (e.NewSize.Width > currentReadingTextWidth)
+				{
+					currentReadingTextWidth = e.NewSize.Width;
+				}
+				else
+				{
+					((TextBlock)sender).Width = currentReadingTextWidth;
+				}
+			}
 		}
 	}
 }

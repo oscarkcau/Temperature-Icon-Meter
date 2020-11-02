@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:TemperatureIconMeterWPF"
              mc:Ignorable="d" 
         xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
-             d:DesignHeight="350" d:DesignWidth="200" Loaded="PopupWindowControl_Loaded" Unloaded="PopupWindowControl_Unloaded">
+             d:DesignHeight="350" d:DesignWidth="200">
     <Border BorderThickness="1" CornerRadius="8" BorderBrush="DarkGray" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
-        <Grid Width="220" Margin="8,0,8,8">
+        <Grid MinWidth="150" Margin="8,0,8,8">
             <ItemsControl ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -40,17 +40,17 @@
                                                     </Style>
                                                 </TextBlock.Style>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" TextAlignment="Right" Foreground="DarkRed">
+                                            <TextBlock Grid.Column="1" TextAlignment="Right" Foreground="DarkRed" Margin="8,0,0,0" SizeChanged="MaxTextBlock_SizeChanged">
                                                 <TextBlock.Text>
                                                     <Binding Path="Max" StringFormat="{}▲{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="2" TextAlignment="Right" Foreground="RoyalBlue" Margin="4,0,0,0">
+                                            <TextBlock Grid.Column="2" TextAlignment="Right" Foreground="RoyalBlue" Margin="4,0,0,0" SizeChanged="MinTextBlock_SizeChanged">
                                                 <TextBlock.Text>
                                                     <Binding Path="Min" StringFormat="{}▼{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold"  Margin="8,0,0,0">
+                                            <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold"  Margin="8,0,0,0" SizeChanged="CurrentTextBlock_SizeChanged">
                                                 <TextBlock.Text>
                                                     <Binding Path="Value" StringFormat="{}{0}°C"/>
                                                 </TextBlock.Text>
