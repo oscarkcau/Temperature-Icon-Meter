@@ -72,7 +72,8 @@
                     Click="ButtonCancel_Click"/>
             <tb:TaskbarIcon x:Name="MainTaskbarIcon" 
                             ContextMenu="{DynamicResource SharedContextMenu}" 
-                            IconSource="icon.ico" >
+                            IconSource="icon.ico" 
+                            ToolTipText="{Binding TemperatureMeter.Tooltip, Mode=OneWay}">
                 <tb:TaskbarIcon.TrayPopup>
                     <local:PopupWindow/>
                 </tb:TaskbarIcon.TrayPopup>
