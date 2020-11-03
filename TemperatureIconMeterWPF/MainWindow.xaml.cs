@@ -31,6 +31,7 @@ namespace TemperatureIconMeterWPF
 			this.Visibility = Visibility.Hidden;
 
 			var vm = this.DataContext as MainViewModel;
+			vm.MainWindow = this;
 
 			// setup property changed listener for tray icon update
 			vm.TemperatureMeter.PropertyChanged += TemperatureMeter_PropertyChanged;
