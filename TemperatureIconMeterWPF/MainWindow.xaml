@@ -70,7 +70,14 @@
                     Content="{x:Static properties:Resources.Cancel}" 
                     Command="{Binding CancelSettingsUpdate, Mode=OneWay}" 
                     Click="ButtonCancel_Click"/>
-            <tb:TaskbarIcon x:Name="MainTaskbarIcon" HorizontalAlignment="Left" VerticalAlignment="Top" ContextMenu="{DynamicResource SharedContextMenu}" IconSource="icon.ico" ToolTipText="{Binding TemperatureMeter.Tooltip}"/>
+            <tb:TaskbarIcon x:Name="MainTaskbarIcon" 
+                            ContextMenu="{DynamicResource SharedContextMenu}" 
+                            IconSource="icon.ico" 
+                            ToolTipText="{Binding TemperatureMeter.Tooltip, Mode=OneWay}">
+                <tb:TaskbarIcon.TrayPopup>
+                    <local:PopupWindow/>
+                </tb:TaskbarIcon.TrayPopup>
+            </tb:TaskbarIcon>
         </Grid>
 
         <Grid DockPanel.Dock="Bottom" Margin="8,0">

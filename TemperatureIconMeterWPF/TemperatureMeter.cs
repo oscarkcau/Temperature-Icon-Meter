@@ -73,7 +73,7 @@ namespace TemperatureIconMeterWPF
 			{
 				string hardwareName = h.Name;
 
-				foreach (var s in h.Sensors.Where(s => s.IsSelected))
+				foreach (var s in h.Sensors)
 				{
 					// store all selected sensors
 					string sensorName = s.Name;

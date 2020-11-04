@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>4b2b3490-e99b-41c8-9240-9950a6adb6ba</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>TemperatureIconMeterSetup</OutputName>
+    <OutputType>Package</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;HarvestPath=..\TemperatureIconMeterWPF\bin\Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>HarvestPath=..\TemperatureIconMeterWPF\bin\Release</DefineConstants>
+    <VerboseOutput>False</VerboseOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DefineConstants>Debug;HarvestPath=..\TemperatureIconMeterWPF\bin\Debug</DefineConstants>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>HarvestPath=..\TemperatureIconMeterWPF\bin\Release</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TemperatureIconMeterWPF\TemperatureIconMeterWPF.csproj">
+      <Name>TemperatureIconMeterWPF</Name>
+      <Project>{a03abf5b-c587-40ab-b4d1-3d237c62e300}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
+  <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
+    <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <Target Name="BeforeBuild">
+    <!-- Get assembly infomation -->
+    <GetAssemblyIdentity AssemblyFiles="..\TemperatureIconMeterWPF\bin\$(Configuration)\TemperatureIconMeter.exe">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+    <!-- Create the MSBuild property $(VersionNumber) -->
+    <CreateProperty Value="%(AsmInfo.Version)">
+      <Output TaskParameter="Value" PropertyName="VersionNumber" />
+    </CreateProperty>
+    <!-- Create the MSBuild property $(ShortVersionNumber) -->
+    <CreateProperty Value="$([System.Version]::Parse(%(AsmInfo.Version)).ToString(3))">
+      <Output TaskParameter="Value" PropertyName="ShortVersionNumber" />
+    </CreateProperty>
+    <!-- Create the WiX preprocessor variable $(var.VersionNumber) -->
+    <CreateProperty Value="$(DefineConstants);VersionNumber=$(VersionNumber)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+    <!-- Create the WiX preprocessor variable $(var.ShortVersionNumber) -->
+    <CreateProperty Value="$(DefineConstants);ShortVersionNumber=$(ShortVersionNumber)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+    <!-- Harvest output folder -->
+    <HeatDirectory Directory="..\TemperatureIconMeterWPF\bin\$(Configuration)" PreprocessorVariable="var.HarvestPath" OutputFile="HeatGeneratedFileList.wxs" ComponentGroupName="HeatGenerated" DirectoryRefId="INSTALLFOLDER" AutogenerateGuids="true" ToolPath="$(WixToolPath)" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" />
+  </Target>
+  <Target Name="AfterBuild">
+    <Copy SourceFiles=".\bin\$(Configuration)\$(OutputName).msi" DestinationFiles=".\bin\$(Configuration)\$(OutputName)_$(ShortVersionNumber)_$(Platform).msi" />
+    <Delete Files=".\bin\$(Configuration)\$(OutputName).msi" />
+  </Target>
+</Project>

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.Win32.TaskScheduler;
+using System.Windows;
 
 namespace TemperatureIconMeterWPF
 {
@@ -18,6 +19,7 @@ namespace TemperatureIconMeterWPF
 		TemperatureMeter _temperatureMeter;
 
 		// properties
+		public Window MainWindow { get; set; }
 		public Properties.Settings Settings { get; } = Properties.Settings.Default;
 		public TemperatureMeter TemperatureMeter { get => _temperatureMeter; private set => SetField(ref _temperatureMeter, value); }
 		public int MinTemperature { get => 0; }

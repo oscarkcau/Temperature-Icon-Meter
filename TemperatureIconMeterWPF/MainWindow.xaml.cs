@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -30,11 +31,12 @@ namespace TemperatureIconMeterWPF
 			this.Visibility = Visibility.Hidden;
 
 			var vm = this.DataContext as MainViewModel;
+			vm.MainWindow = this;
 
 			// setup property changed listener for tray icon update
 			vm.TemperatureMeter.PropertyChanged += TemperatureMeter_PropertyChanged;
 
-			// setup defailt icon for TemperatureMeter object
+			// setup default icon for TemperatureMeter object
 			var uri = new Uri(@"pack://application:,,,/icon.ico", UriKind.RelativeOrAbsolute);
 			Stream iconStream = Application.GetResourceStream(uri).Stream;
 			vm.TemperatureMeter.DefaultTrayIcon = new System.Drawing.Icon(iconStream);

@@ -12,3 +12,5 @@
 /TemperatureIconMeterWPF/bin
 /TemperatureIconMeterWPF/obj
 /packages
+/TemperatureIconMeterWixSetup/bin/Release
+/TemperatureIconMeterWixSetup/obj
