@@ -27,9 +27,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
             
             <Image x:Name="ImageClose" Source="images\cross.png" Stretch="None" 
-                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,0,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,0,0" Cursor="Hand" 
                    MouseUp="Image_MouseUp" TouchUp="Image_TouchUp" />
             
             <ItemsControl ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}">
@@ -55,9 +58,6 @@
                                                             <DataTrigger Binding="{Binding IsSelected}" Value="true">
                                                                 <Setter Property="Foreground" Value="DarkGreen"/>
                                                                 <Setter Property="FontWeight" Value="Bold"/>
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ConnectionStatus}" Value="false">
-                                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
