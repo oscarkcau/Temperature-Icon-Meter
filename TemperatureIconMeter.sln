@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureIconMeter", "TemperatureIconMeter\TemperatureIconMeter.csproj", "{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TemperatureIconMeterSetup", "TemperatureIconMeterSetup\TemperatureIconMeterSetup.vdproj", "{24041456-7E4F-4C61-9B13-CAB02D576284}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureIconMeterWPF", "TemperatureIconMeterWPF\TemperatureIconMeterWPF.csproj", "{A03ABF5B-C587-40AB-B4D1-3D237C62E300}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TemperatureIconMeterSetup64", "TemperatureIconMeterSetup64\TemperatureIconMeterSetup64.vdproj", "{DAEA0EF6-BD04-4DCD-BFB6-A362320002DD}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "TemperatureIconMeterWixSetup", "TemperatureIconMeterWixSetup\TemperatureIconMeterWixSetup.wixproj", "{4B2B3490-E99B-41C8-9240-9950A6ADB6BA}"
 EndProject
@@ -21,15 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D96076E-25B6-4FC0-A02D-BF2772AFA1BC}.Release|x86.ActiveCfg = Release|Any CPU
-		{24041456-7E4F-4C61-9B13-CAB02D576284}.Debug|Any CPU.ActiveCfg = Debug
-		{24041456-7E4F-4C61-9B13-CAB02D576284}.Debug|x86.ActiveCfg = Debug
-		{24041456-7E4F-4C61-9B13-CAB02D576284}.Release|Any CPU.ActiveCfg = Release
-		{24041456-7E4F-4C61-9B13-CAB02D576284}.Release|x86.ActiveCfg = Release
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -38,10 +23,6 @@ Global
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Release|x86.ActiveCfg = Release|Any CPU
 		{A03ABF5B-C587-40AB-B4D1-3D237C62E300}.Release|x86.Build.0 = Release|Any CPU
-		{DAEA0EF6-BD04-4DCD-BFB6-A362320002DD}.Debug|Any CPU.ActiveCfg = Debug
-		{DAEA0EF6-BD04-4DCD-BFB6-A362320002DD}.Debug|x86.ActiveCfg = Debug
-		{DAEA0EF6-BD04-4DCD-BFB6-A362320002DD}.Release|Any CPU.ActiveCfg = Release
-		{DAEA0EF6-BD04-4DCD-BFB6-A362320002DD}.Release|x86.ActiveCfg = Release
 		{4B2B3490-E99B-41C8-9240-9950A6ADB6BA}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{4B2B3490-E99B-41C8-9240-9950A6ADB6BA}.Debug|x86.ActiveCfg = Debug|x86
 		{4B2B3490-E99B-41C8-9240-9950A6ADB6BA}.Release|Any CPU.ActiveCfg = Release|x64
