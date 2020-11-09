@@ -61,17 +61,8 @@
       <Component Id="cmpBE3C1D05C7C90455322C9F819A57A07A" Guid="*">
         <File Id="filE7C602A91344AD969255F20A2CA7411A" KeyPath="yes" Source="$(var.HarvestPath)\Hardcodet.Wpf.TaskbarNotification.dll" />
       </Component>
-      <Component Id="cmp92758FBE7BAD0A8C22E2DF7485108D82" Guid="*">
-        <File Id="fil37C16A438720B34E2BAED72C2359E6B8" KeyPath="yes" Source="$(var.HarvestPath)\Hardcodet.Wpf.TaskbarNotification.pdb" />
-      </Component>
-      <Component Id="cmp1AB3F692680AD43D977D2B4893C60651" Guid="*">
-        <File Id="fil8DCFE8E2064CED909E7B76E107F2D738" KeyPath="yes" Source="$(var.HarvestPath)\Hardcodet.Wpf.TaskbarNotification.xml" />
-      </Component>
       <Component Id="cmp43984E66F2A9DD89F93CF7035D8989A0" Guid="*">
         <File Id="filD88CABA6D1DF77999CB7D426C4B617A4" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Win32.TaskScheduler.dll" />
-      </Component>
-      <Component Id="cmp08AF6F09151836641FA7AB5776CEF105" Guid="*">
-        <File Id="fil95DD99F610362C6190FF14BB3C403053" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Win32.TaskScheduler.xml" />
       </Component>
       <Component Id="cmp36162545506C564646EFF7AED20D4D87" Guid="*">
         <File Id="filA005E04D6C984A8EF36F9653B3FA4555" KeyPath="yes" Source="$(var.HarvestPath)\OpenHardwareMonitorLib.dll" />
@@ -204,10 +195,7 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <ComponentRef Id="cmpBE3C1D05C7C90455322C9F819A57A07A" />
-      <ComponentRef Id="cmp92758FBE7BAD0A8C22E2DF7485108D82" />
-      <ComponentRef Id="cmp1AB3F692680AD43D977D2B4893C60651" />
       <ComponentRef Id="cmp43984E66F2A9DD89F93CF7035D8989A0" />
-      <ComponentRef Id="cmp08AF6F09151836641FA7AB5776CEF105" />
       <ComponentRef Id="cmp36162545506C564646EFF7AED20D4D87" />
       <ComponentRef Id="cmpB1E64B83A59AC916B9DDC1837635D99B" />
       <ComponentRef Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" />
