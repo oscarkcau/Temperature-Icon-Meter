@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
         xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
              d:DesignHeight="350" d:DesignWidth="250">
+
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="ToolTipService.Placement" Value="Top" />
+            <Setter Property="Cursor" Value="Hand" />
+            <EventSetter Event="MouseUp" Handler="Image_MouseUp"/>
+            <EventSetter Event="TouchUp" Handler="Image_TouchUp"/>
+        </Style>
+    </UserControl.Resources>
+    
     <Border BorderThickness="1" CornerRadius="8" BorderBrush="DarkGray" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
         <Grid MinWidth="150" Margin="8,0,8,8">
             <Grid.Resources>
@@ -31,9 +41,9 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             
-            <Image x:Name="ImageClose" Source="images\cross.png" Stretch="None" 
-                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,0,0" Cursor="Hand" 
-                   MouseUp="Image_MouseUp" TouchUp="Image_TouchUp" />
+            <Image x:Name="ImageClose" Source="images\cross.png" Stretch="None"
+                   ToolTip="{x:Static properties:Resources.Close}"
+                   HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,0,0"/>
             
             <ItemsControl ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}">
                 <ItemsControl.ItemTemplate>
@@ -101,9 +111,9 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Temperature Icon Meter" Foreground="Gray"></TextBlock>
-                <Image Grid.Column="1" x:Name="ImageResetMaxMin" Source="images\arrow_rotate_clockwise.png" Margin="4,0,0,0" Cursor="Hand" MouseUp="Image_MouseUp" TouchUp="Image_TouchUp"/>
-                <Image Grid.Column="2" x:Name="ImageConfig" Source="images\cog.png"  Margin="4,0,0,0" Cursor="Hand" MouseUp="Image_MouseUp" TouchUp="Image_TouchUp"/>
-                <Image Grid.Column="3" x:Name="ImageAbout" Source="images\information.png"  Margin="4,0,0,0" Cursor="Hand" MouseUp="Image_MouseUp" TouchUp="Image_TouchUp"/>
+                <Image Grid.Column="1" x:Name="ImageResetMaxMin" Source="images\arrow_rotate_clockwise.png" ToolTip="{x:Static properties:Resources.ResetMinMaxReadings}" Margin="4,0,0,0"/>
+                <Image Grid.Column="2" x:Name="ImageConfig" Source="images\cog.png" ToolTip="{x:Static properties:Resources.Settings}" Margin="4,0,0,0"/>
+                <Image Grid.Column="3" x:Name="ImageAbout" Source="images\information.png" ToolTip="{x:Static properties:Resources.AboutApplication}" Margin="4,0,0,0"/>
             </Grid>
         </Grid>
     </Border>
