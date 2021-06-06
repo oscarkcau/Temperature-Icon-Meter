@@ -115,11 +115,29 @@ namespace TemperatureIconMeterWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drag here to move.
+        /// </summary>
+        public static string DragHereToMove {
+            get {
+                return ResourceManager.GetString("DragHereToMove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hardware.
         /// </summary>
         public static string Hardware {
             get {
                 return ResourceManager.GetString("Hardware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep always on top.
+        /// </summary>
+        public static string KeepAlwaysOnTop {
+            get {
+                return ResourceManager.GetString("KeepAlwaysOnTop", resourceCulture);
             }
         }
         

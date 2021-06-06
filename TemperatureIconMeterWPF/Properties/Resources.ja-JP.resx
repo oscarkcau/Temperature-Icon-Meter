@@ -160,4 +160,10 @@
   <data name="Version" xml:space="preserve">
     <value>バージョン</value>
   </data>
+  <data name="DragHereToMove" xml:space="preserve">
+    <value>ここにドラッグして移動します</value>
+  </data>
+  <data name="KeepAlwaysOnTop" xml:space="preserve">
+    <value>常にトップを維持</value>
+  </data>
 </root>

@@ -180,4 +180,10 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="DragHereToMove" xml:space="preserve">
+    <value>Drag here to move</value>
+  </data>
+  <data name="KeepAlwaysOnTop" xml:space="preserve">
+    <value>Keep always on top</value>
+  </data>
 </root>

@@ -180,4 +180,10 @@
   <data name="Version" xml:space="preserve">
     <value>版本</value>
   </data>
+  <data name="DragHereToMove" xml:space="preserve">
+    <value>拖到這裡移動</value>
+  </data>
+  <data name="KeepAlwaysOnTop" xml:space="preserve">
+    <value>保持在最前面</value>
+  </data>
 </root>
