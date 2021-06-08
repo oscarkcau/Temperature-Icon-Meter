@@ -186,4 +186,13 @@
   <data name="KeepAlwaysOnTop" xml:space="preserve">
     <value>保持在最前面</value>
   </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>最大值</value>
+  </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>最小值</value>
+  </data>
+  <data name="CurrentValue" xml:space="preserve">
+    <value>當前值</value>
+  </data>
 </root>

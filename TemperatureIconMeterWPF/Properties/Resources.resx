@@ -186,4 +186,13 @@
   <data name="KeepAlwaysOnTop" xml:space="preserve">
     <value>Keep always on top</value>
   </data>
+  <data name="MaxValue" xml:space="preserve">
+    <value>Max Value</value>
+  </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>Min Value</value>
+  </data>
+  <data name="CurrentValue" xml:space="preserve">
+    <value>Current Value</value>
+  </data>
 </root>

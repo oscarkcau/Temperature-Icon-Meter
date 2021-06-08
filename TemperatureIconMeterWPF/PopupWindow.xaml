@@ -36,6 +36,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -111,9 +112,27 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
-            <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Height="2" Margin="-8,4,-8,0"/>
+            <WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="12" Height="12" Fill="DarkRed" Margin="0,0,0,0"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.MaxValue}}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                    <Rectangle Width="12" Height="12" Fill="RoyalBlue" Margin="0,0,0,0"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.MinValue}}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                    <Rectangle Width="12" Height="12" Fill="Black" Margin="0,0,0,0"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.CurrentValue}}"/>
+                </StackPanel>
+            </WrapPanel>
 
-            <Grid Grid.Row="2" Margin="0,4,0,0">
+            <Line Grid.Row="2" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Height="2" Margin="-8,4,-8,0"/>
+
+            <Grid Grid.Row="3" Margin="0,4,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
