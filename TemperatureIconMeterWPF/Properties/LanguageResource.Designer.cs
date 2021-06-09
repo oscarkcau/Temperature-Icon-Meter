@@ -70,7 +70,7 @@ namespace TemperatureIconMeterWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Japanese.
+        ///   Looks up a localized string similar to 日本語 (Japanese).
         /// </summary>
         public static string ja_JP {
             get {
@@ -79,7 +79,7 @@ namespace TemperatureIconMeterWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Traditional Chinese.
+        ///   Looks up a localized string similar to 繁體中文 (Traditional Chinese).
         /// </summary>
         public static string zh {
             get {
@@ -88,7 +88,7 @@ namespace TemperatureIconMeterWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Simplified Chinese.
+        ///   Looks up a localized string similar to 简体中文 (Simplified Chinese).
         /// </summary>
         public static string zh_CN {
             get {

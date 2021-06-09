@@ -101,12 +101,12 @@
     <value>English</value>
   </data>
   <data name="ja-JP" xml:space="preserve">
-    <value>Japanese</value>
+    <value>日本語 (Japanese)</value>
   </data>
   <data name="zh" xml:space="preserve">
-    <value>Traditional Chinese</value>
+    <value>繁體中文 (Traditional Chinese)</value>
   </data>
   <data name="zh-CN" xml:space="preserve">
-    <value>Simplified Chinese</value>
+    <value>简体中文 (Simplified Chinese)</value>
   </data>
 </root>

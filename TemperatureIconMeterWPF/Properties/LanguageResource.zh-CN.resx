@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="en" xml:space="preserve">
-    <value>英语</value>
+    <value>English (英语)</value>
   </data>
   <data name="ja-JP" xml:space="preserve">
-    <value>日语</value>
+    <value>日本語 (日语)</value>
   </data>
   <data name="zh" xml:space="preserve">
-    <value>繁体中文</value>
+    <value>繁體中文 (繁体中文)</value>
   </data>
   <data name="zh-CN" xml:space="preserve">
     <value>简体中文</value>

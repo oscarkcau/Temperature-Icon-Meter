@@ -172,7 +172,7 @@
     <value>警告溫度</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>語言:</value>
+    <value>語言 (Language):</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>關閉</value>
