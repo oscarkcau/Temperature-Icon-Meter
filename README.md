@@ -3,7 +3,7 @@
 This is a by-product of my another project [Icon-Meter](https://oscarkcau.github.io/Icon-Meter/). It displays small notifyicon which visualize the user selected current temperature readings in small bars. Also it will record the minimum and maximum temperature readings during its running. The temperature readings is collected via WMI interface provided by [Open Hardware Monitor](https://github.com/openhardwaremonitor/openhardwaremonitor).
 Temperature Icon Meter has the following features:
 
-<img src="taskbar_capture.png" width="156"/>
+<img src="taskbar_capture.png" width="312"/>
 <img src="popup_capture.png" width="260"/>
 
 * (Version 2.3.2) Provide buttons for moving popup window and pinning popup window on top.
