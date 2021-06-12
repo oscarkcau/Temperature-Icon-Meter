@@ -102,7 +102,8 @@
                 </Style>
             </Grid.Resources>
             <Grid.RowDefinitions>
-                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -118,7 +119,26 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Label x:Name="LabelSafeTemperature" VerticalAlignment="Center" Grid.Row="1">
+            <WrapPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,0">
+                <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                    <Rectangle Width="12" Height="12" Fill="Black"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.CurrentValue}}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                    <Rectangle Width="12" Height="12" Fill="DarkRed"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.MaxValue}}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
+                    <Rectangle Width="12" Height="12" Fill="RoyalBlue"/>
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
+                               Text="{Binding Source={x:Static properties:Resources.MinValue}}"/>
+                </StackPanel>
+            </WrapPanel>            
+            <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
+
+            <Label x:Name="LabelSafeTemperature" Grid.Row="2" VerticalAlignment="Center">
                 <TextBlock>
                     <Run Text="{x:Static properties:Resources.SafeTemperature}"/><!--
                  --><Run Text=": ≤ "/><!--
@@ -127,7 +147,7 @@
                 </TextBlock>
             </Label>
 
-            <Label x:Name="LabelWarmingTemperature" Grid.Row="2" VerticalAlignment="Center">
+            <Label x:Name="LabelWarmingTemperature" Grid.Row="3" VerticalAlignment="Center">
                 <TextBlock>
                     <Run Text="{x:Static properties:Resources.WarningTemperature}"/><!--
                  --><Run Text=": "/><!--
@@ -137,7 +157,7 @@
                  --><Run Text="°C"/>
                 </TextBlock>
             </Label>
-            <Label x:Name="LabelDangerTemperature" Grid.Row="3" VerticalAlignment="Center">
+            <Label x:Name="LabelDangerTemperature" Grid.Row="4" VerticalAlignment="Center">
                 <TextBlock>
                     <Run Text="{x:Static properties:Resources.DangerTemperature}"/><!--
                  --><Run Text=": ≥ "/><!--
@@ -145,45 +165,45 @@
                  --><Run Text="°C"/>
                 </TextBlock>            
             </Label>
-            <Slider Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding WarningThreshold}"/>
-            <Slider Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding DangerThreshold}"/>
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" MinWidth="80"
+            <Slider Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding WarningThreshold}"/>
+            <Slider Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" MinWidth="80" Margin="0,0,8,0" Maximum="{Binding MaxTemperature, Mode=OneWay}" Minimum="{Binding MinTemperature, Mode=OneWay}" Value="{Binding DangerThreshold}"/>
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" MinWidth="80"
                 SelectedColor="{
                     Binding Path=Settings.SafeColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
                 SelectedColor="{
                     Binding Path=Settings.WarningColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
-            <xctk:ColorPicker Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
+            <xctk:ColorPicker Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" MinWidth="80" Margin="0,0,0,0"
                 SelectedColor="{
                     Binding Path=Settings.DangerColor, 
                     Converter={StaticResource DrawingColorToWindowsMediaColor}
                 }" 
             />
             
-            <CheckBox Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="3"  Margin="0,4"
+            <CheckBox Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3"  Margin="0,4"
                       Content="{x:Static properties:Resources.UseVerticalBars}"
                       IsChecked="{Binding Settings.UseVerticalBars}"/>
-            <CheckBox Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,4"
+            <CheckBox Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,4"
                       Content="{x:Static properties:Resources.RunatStartup}"
                       IsChecked="{Binding Settings.RunAtStartup}" />
 
-            <Line Grid.Row="6" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
+            <Line Grid.Row="7" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
             
-            <Label Grid.Column="0" Grid.Row="7" VerticalContentAlignment="Center" Margin="0,0,0,4"
+            <Label Grid.Column="0" Grid.Row="8" VerticalContentAlignment="Center" Margin="0,0,0,4"
                Content="{x:Static properties:Resources.Language}"/>
-            <ComboBox Name="cmbLanguage" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
+            <ComboBox Name="cmbLanguage" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"
                   SelectedValue="{Binding Source={x:Static properties:Settings.Default}, Path=Language}"
                   SelectedValuePath="Key"
                   DisplayMemberPath="Value" Margin="4,2"
                   />
 
-            <Line Grid.Row="8" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
+            <Line Grid.Row="9" Style="{StaticResource horizontalLineStyle}" VerticalAlignment="Center" Margin="0,4"/>
 
         </Grid>
         <TreeView x:Name="TreeViewMain" ItemsSource="{Binding TemperatureMeter.HardwareTreeNodes}" Margin="5,0">
@@ -196,14 +216,25 @@
                         <CheckBox IsChecked="{Binding IsSelected}"/>
                         <TextBlock>
                             <TextBlock.Text>
-                                <MultiBinding StringFormat=" {0} [{1}°C ▲{2} ▼{3}]">
-                                    <Binding Path="Name" />
-                                    <Binding Path="Value" />
-                                    <Binding Path="Max" />
-                                    <Binding Path="Min" />
-                                </MultiBinding>
+                                <Binding Path="Name" StringFormat="{}{0} ["/>
                             </TextBlock.Text>
                         </TextBlock>
+                        <TextBlock FontWeight="Bold" Margin="0,0,0,0">
+                            <TextBlock.Text>
+                                <Binding Path="Value" StringFormat="{}{0}°C"/>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Foreground="DarkRed" Margin="4,0,0,0">
+                            <TextBlock.Text>
+                                <Binding Path="Max" StringFormat="{}▲{0}"/>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Foreground="RoyalBlue" Margin="4,0,0,0">
+                            <TextBlock.Text>
+                                <Binding Path="Min" StringFormat="{}▼{0}"/>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Text="]" />
                         <TextBlock Margin="5,0,0,0">
                             <Hyperlink Click="SensorTreeNodeHyperlink_Click">
                                 <Run Text="{x:Static properties:Resources.DisplayName}"/><!--

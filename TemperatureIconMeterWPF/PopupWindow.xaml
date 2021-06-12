@@ -114,17 +114,17 @@
 
             <WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="12" Height="12" Fill="DarkRed" Margin="0,0,0,0"/>
+                    <Rectangle Width="12" Height="12" Fill="DarkRed"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.MaxValue}}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
-                    <Rectangle Width="12" Height="12" Fill="RoyalBlue" Margin="0,0,0,0"/>
+                    <Rectangle Width="12" Height="12" Fill="RoyalBlue"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.MinValue}}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
-                    <Rectangle Width="12" Height="12" Fill="Black" Margin="0,0,0,0"/>
+                    <Rectangle Width="12" Height="12" Fill="Black"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.CurrentValue}}"/>
                 </StackPanel>
