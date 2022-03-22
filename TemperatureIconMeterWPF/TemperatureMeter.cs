@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using OpenHardwareMonitor.Hardware;
+using LibreHardwareMonitor.Hardware;
 
 namespace TemperatureIconMeterWPF
 {
@@ -138,12 +138,12 @@ namespace TemperatureIconMeterWPF
 			// create Computer object
 			myComputer = new Computer
 			{
-				CPUEnabled = true,
-				MainboardEnabled = true,
-				HDDEnabled = true,
-				GPUEnabled = true,
-				RAMEnabled = true,
-				FanControllerEnabled = true
+				IsCpuEnabled = true,
+				IsGpuEnabled = true,
+				IsMemoryEnabled = true,
+				IsMotherboardEnabled = true,
+				IsControllerEnabled = true,
+				IsStorageEnabled = true
 			};
 			myComputer.Open();
 
