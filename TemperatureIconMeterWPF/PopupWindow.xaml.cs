@@ -25,12 +25,11 @@ namespace TemperatureIconMeterWPF
 	{
 		// private fields
 		// private fields
-		bool pinned = false;
-		bool isAnchorMouseDown = false;
-		Point mouseDownPosition;
-		double maxReadingTextWidth = 0;
-		double minReadingTextWidth = 0;
-		double currentReadingTextWidth = 0;
+		private bool isAnchorMouseDown = false;
+		private Point mouseDownPosition;
+		private double maxReadingTextWidth = 0;
+		private double minReadingTextWidth = 0;
+		private double currentReadingTextWidth = 0;
 
 		// public properties
 		public double MaxReadingTextWidth {
@@ -95,48 +94,30 @@ namespace TemperatureIconMeterWPF
 		}
 		private void ImagePressed(Image sender)
 		{
-			if (sender == this.ImagePin)
-			{
-				if (pinned == false)
-				{
-					pinned = true;
-					ImagePin.RenderTransform = new TranslateTransform(-2, 4);
-					ImagePin.Clip = new RectangleGeometry(new Rect(0, 0, 16, 12));
-					var p = this.Parent as Popup;
-					p.StaysOpen = true;
-				}
-				else
-				{
-					pinned = false;
-					ImagePin.RenderTransform = Transform.Identity;
-					ImagePin.Clip = null;
-					var p = this.Parent as Popup;
-					p.StaysOpen = false;
-					p.IsOpen = false;
-				}
-			}
-			if (sender == this.ImageClose)
+			if (sender == ImageClose)
 			{
 				// hide popup window
-				var p = this.Parent as Popup;
+				Popup p = Parent as Popup;
 				p.IsOpen = false;
+				p.StaysOpen = false;
 			}
 
-			if (sender == this.ImageConfig)
+			if (sender == ImageConfig)
 			{
 				// hide popup window
-				var p = this.Parent as Popup;
+				Popup p = Parent as Popup;
 				p.IsOpen = false;
+				p.StaysOpen = false;
 
 				// show setting window
-				var vm = this.DataContext as MainViewModel;
+				MainViewModel vm = DataContext as MainViewModel;
 				vm.MainWindow.Show();
 			}
 
-			if (sender == this.ImageAbout)
+			if (sender == ImageAbout)
 			{
 				// hide popup window
-				var p = this.Parent as Popup;
+				Popup p = Parent as Popup;
 				p.IsOpen = false;
 
 				// show about dialog
@@ -144,34 +125,50 @@ namespace TemperatureIconMeterWPF
 				aboutBox.ShowDialog();
 			}
 
-			if (sender == this.ImageResetMaxMin)
+			if (sender == ImageResetMaxMin)
 			{
-				var vm = this.DataContext as MainViewModel;
+				MainViewModel vm = DataContext as MainViewModel;
 				vm.ResetMinMaxReadings.Execute(null);
 			}
 		}
 		private void ImageAnchor_MouseDown(object sender, MouseButtonEventArgs e)
 		{
+			// set flag
 			isAnchorMouseDown = true;
+
+			// record mouse down position for calculate relative movement
 			mouseDownPosition = e.GetPosition(this);
+
+			// force button to receive mouse events
 			ImageAnchor.CaptureMouse();
 		}
 		private void ImageAnchor_MouseMove(object sender, MouseEventArgs e)
 		{
+			// if it is mouse drag
 			if (isAnchorMouseDown)
 			{
-				var pos = e.GetPosition(this);
-				var dx = pos.X - mouseDownPosition.X;
-				var dy = pos.Y - mouseDownPosition.Y;
-				var p = this.Parent as Popup;
+				// calcute relative mouse movement
+				Point pos = e.GetPosition(this);
+				double dx = pos.X - mouseDownPosition.X;
+				double dy = pos.Y - mouseDownPosition.Y;
+
+				// update popup window position
+				Popup p = this.Parent as Popup;
 				p.HorizontalOffset += dx;
 				p.VerticalOffset += dy;
 			}
 		}
 		private void ImageAnchor_MouseUp(object sender, MouseButtonEventArgs e)
 		{
+			// reset flag
 			isAnchorMouseDown = false;
+
+			// release mouse capture 
 			ImageAnchor.ReleaseMouseCapture();
+
+			// keep popup be shown even focus is lost
+			Popup p = Parent as Popup;
+			p.StaysOpen = true;
 		}
 
 		// INotifyPropertyChanged implementation

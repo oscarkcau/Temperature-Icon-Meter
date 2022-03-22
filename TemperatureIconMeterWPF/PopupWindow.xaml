@@ -51,8 +51,6 @@
                 <Image Grid.Column="0" x:Name="ImageAnchor" Source="images\anchor.png" HorizontalAlignment="Left"
                    ToolTip="{x:Static properties:Resources.DragHereToMove}" Margin="0,0,0,0"
                        MouseDown="ImageAnchor_MouseDown" MouseMove="ImageAnchor_MouseMove" MouseUp="ImageAnchor_MouseUp"/>
-                <Image Grid.Column="1" x:Name="ImagePin" Source="images\pin.png"
-                   ToolTip="{x:Static properties:Resources.KeepAlwaysOnTop}" Margin="0,0,0,0"/>
                 <Image Grid.Column="2" x:Name="ImageClose" Source="images\cross.png"
                    ToolTip="{x:Static properties:Resources.Close}" Margin="4,0,0,0"/>
             </Grid>

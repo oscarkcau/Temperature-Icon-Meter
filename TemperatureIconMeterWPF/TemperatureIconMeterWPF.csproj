@@ -204,8 +204,5 @@
   <ItemGroup>
     <Resource Include="images\anchor.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\pin.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

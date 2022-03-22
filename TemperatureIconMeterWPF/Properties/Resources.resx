@@ -183,9 +183,6 @@
   <data name="DragHereToMove" xml:space="preserve">
     <value>Drag here to move</value>
   </data>
-  <data name="KeepAlwaysOnTop" xml:space="preserve">
-    <value>Keep always on top</value>
-  </data>
   <data name="MaxValue" xml:space="preserve">
     <value>Max Value</value>
   </data>
