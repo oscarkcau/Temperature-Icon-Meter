@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:TemperatureIconMeterWPF"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:ThemeResourceDictionary 
+                LightThemeSource="LightTheme.xaml" 
+                DarkThemeSource="DarkTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

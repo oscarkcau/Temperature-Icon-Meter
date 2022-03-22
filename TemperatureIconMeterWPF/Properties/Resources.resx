@@ -192,4 +192,7 @@
   <data name="CurrentValue" xml:space="preserve">
     <value>Current Value</value>
   </data>
+  <data name="UseDarkMode" xml:space="preserve">
+    <value>Use Dark Mode</value>
+  </data>
 </root>

@@ -172,4 +172,7 @@
   <data name="CurrentValue" xml:space="preserve">
     <value>当前值</value>
   </data>
+  <data name="UseDarkMode" xml:space="preserve">
+    <value>使用深色模式</value>
+  </data>
 </root>

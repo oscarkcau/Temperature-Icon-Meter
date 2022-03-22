@@ -14,7 +14,28 @@ namespace TemperatureIconMeterWPF
 	/// </summary>
 	public partial class App : Application
 	{
-		Mutex myMutex;
+		private Mutex myMutex;
+
+
+		private ColorTheme colorTheme = ColorTheme.Light;
+
+		public ColorTheme ColorTheme
+		{
+			get { return colorTheme; }
+			set
+			{
+				if (value != colorTheme)
+				{
+					colorTheme = value;
+
+					foreach (ResourceDictionary d in Resources.MergedDictionaries)
+					{
+						if (d is ThemeResourceDictionary td)
+							td.UpdateSource();
+					}
+				}
+			}
+		}
 
 		private void Application_Startup(object sender, StartupEventArgs e)
 		{
@@ -31,7 +52,7 @@ namespace TemperatureIconMeterWPF
 			myMutex = new Mutex(true, "TemperatureIconMeter-windlknwgcouhq", out bool aIsNewInstance);
 			if (!aIsNewInstance)
 			{
-				App.Current.Shutdown();
+				Current.Shutdown();
 			}
 			else
 			{
@@ -55,8 +76,11 @@ namespace TemperatureIconMeterWPF
 				}
 
 				// set the language being used
-				System.Threading.Thread.CurrentThread.CurrentUICulture =
+				Thread.CurrentThread.CurrentUICulture =
 					new System.Globalization.CultureInfo(settings.Language);
+
+				// apply color theme
+				ColorTheme = settings.UseDarkMode ? ColorTheme.Dark : ColorTheme.Light;
 
 				// create main window
 				MainWindow window = new MainWindow();

@@ -102,12 +102,21 @@
     <Compile Include="SensorRecord.cs" />
     <Compile Include="SensorTreeNode.cs" />
     <Compile Include="TemperatureMeter.cs" />
+    <Compile Include="ThemeResourceDictionary.cs" />
     <Compile Include="WindowDisplayNameEditor.xaml.cs">
       <DependentUpon>WindowDisplayNameEditor.xaml</DependentUpon>
     </Compile>
     <Page Include="AboutBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

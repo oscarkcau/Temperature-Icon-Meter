@@ -259,6 +259,15 @@ namespace TemperatureIconMeterWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Dark Mode.
+        /// </summary>
+        public static string UseDarkMode {
+            get {
+                return ResourceManager.GetString("UseDarkMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Vertical Bars.
         /// </summary>
         public static string UseVerticalBars {

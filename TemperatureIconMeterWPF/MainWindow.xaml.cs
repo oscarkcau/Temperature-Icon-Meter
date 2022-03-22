@@ -82,7 +82,13 @@ namespace TemperatureIconMeterWPF
 				Application.Current.Shutdown();
 			}
 
-			this.Hide();
+			// hide setting window
+			Hide();
+
+			// apply color theme
+			(Application.Current as App).ColorTheme =
+				Properties.Settings.Default.UseDarkMode ? ColorTheme.Dark : ColorTheme.Light;
+			MainTaskbarIcon.TrayPopupResolved.Child = new PopupWindow();
 		}
 		private void ButtonCancel_Click(object sender, RoutedEventArgs e)
 		{

@@ -172,4 +172,7 @@
   <data name="CurrentValue" xml:space="preserve">
     <value>現在値</value>
   </data>
+  <data name="UseDarkMode" xml:space="preserve">
+    <value>ダークモードを使用</value>
+  </data>
 </root>

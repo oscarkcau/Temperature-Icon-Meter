@@ -15,9 +15,16 @@
             <EventSetter Event="MouseUp" Handler="Image_MouseUp"/>
             <EventSetter Event="TouchUp" Handler="Image_TouchUp"/>
         </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PopupForeground}" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource PopupHeader}" />
+        </Style>
     </UserControl.Resources>
-    
-    <Border BorderThickness="1" CornerRadius="8" BorderBrush="DarkGray" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+
+    <Border BorderThickness="1" CornerRadius="8" BorderBrush="DarkGray" Background="{StaticResource PopupBackground}">
         <Grid MinWidth="150" Margin="8,0,8,8">
             <Grid.Resources>
                 <Style x:Key="lineStyle" TargetType="{x:Type Line}">
@@ -59,8 +66,9 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock  HorizontalAlignment="Center" Margin="0,4,0,4" FontWeight="Bold" Foreground="RoyalBlue" 
-                                TextWrapping="WrapWithOverflow" Text="{Binding Name}"/>
+                            <TextBlock  HorizontalAlignment="Center" Margin="0,4,0,4" FontWeight="Bold" 
+                                        Foreground="{StaticResource PopupHeader}" 
+                                        TextWrapping="WrapWithOverflow" Text="{Binding Name}"/>
                             <ItemsControl ItemsSource="{Binding Sensors}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
@@ -71,7 +79,9 @@
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="{Binding Path=DisplayName}" HorizontalAlignment="Left">
+                                            <TextBlock Grid.Column="0" HorizontalAlignment="Left"
+                                                       Text="{Binding Path=DisplayName}"
+                                                       Foreground="{StaticResource PopupForeground}">
                                                 <TextBlock.Style>
                                                     <Style TargetType="TextBlock">
                                                         <Style.Triggers>
@@ -83,20 +93,23 @@
                                                     </Style>
                                                 </TextBlock.Style>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="1" TextAlignment="Right" Foreground="DarkRed" Margin="8,0,0,0" SizeChanged="MaxTextBlock_SizeChanged"
-                                                       Width="{Binding ElementName=PopupWindowControl, Path=MaxReadingTextWidth}">
+                                            <TextBlock Grid.Column="1" TextAlignment="Right" Margin="8,0,0,0" SizeChanged="MaxTextBlock_SizeChanged"
+                                                       Width="{Binding ElementName=PopupWindowControl, Path=MaxReadingTextWidth}"
+                                                       Foreground="{StaticResource PopupRed}">
                                                 <TextBlock.Text>
                                                     <Binding Path="Max" StringFormat="{}▲{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
-                                            <TextBlock Grid.Column="2" TextAlignment="Right" Foreground="RoyalBlue" Margin="4,0,0,0" SizeChanged="MinTextBlock_SizeChanged"
-                                                       Width="{Binding ElementName=PopupWindowControl, Path=MinReadingTextWidth}">
+                                            <TextBlock Grid.Column="2" TextAlignment="Right" Margin="4,0,0,0" SizeChanged="MinTextBlock_SizeChanged"
+                                                       Width="{Binding ElementName=PopupWindowControl, Path=MinReadingTextWidth}"
+                                                       Foreground="{StaticResource PopupHeader}">
                                                 <TextBlock.Text>
                                                     <Binding Path="Min" StringFormat="{}▼{0}"/>
                                                 </TextBlock.Text>
                                             </TextBlock>
                                             <TextBlock Grid.Column="3" TextAlignment="Right" FontWeight="Bold"  Margin="8,0,0,0" SizeChanged="CurrentTextBlock_SizeChanged"
-                                                       Width="{Binding ElementName=PopupWindowControl, Path=CurrentReadingTextWidth}">
+                                                       Width="{Binding ElementName=PopupWindowControl, Path=CurrentReadingTextWidth}"
+                                                       Foreground="{StaticResource PopupForeground}">
                                                 <TextBlock.Text>
                                                     <Binding Path="Value" StringFormat="{}{0}°C"/>
                                                 </TextBlock.Text>
@@ -112,17 +125,17 @@
 
             <WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="12" Height="12" Fill="DarkRed"/>
+                    <Rectangle Width="12" Height="12" Fill="{StaticResource PopupRed}"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.MaxValue}}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
-                    <Rectangle Width="12" Height="12" Fill="RoyalBlue"/>
+                    <Rectangle Width="12" Height="12" Fill="{StaticResource PopupHeader}"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.MinValue}}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="8,0,0,0">
-                    <Rectangle Width="12" Height="12" Fill="Black"/>
+                    <Rectangle Width="12" Height="12" Fill="{StaticResource PopupForeground}"/>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="4,0,0,0" 
                                Text="{Binding Source={x:Static properties:Resources.CurrentValue}}"/>
                 </StackPanel>
