@@ -4,4 +4,5 @@
     <SolidColorBrush x:Key="PopupForeground" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
     <SolidColorBrush x:Key="PopupHeader" Color="RoyalBlue"/>
     <SolidColorBrush x:Key="PopupRed" Color="DarkRed"/>
+    <SolidColorBrush x:Key="PopupGreen" Color="DarkGreen"/>
 </ResourceDictionary>

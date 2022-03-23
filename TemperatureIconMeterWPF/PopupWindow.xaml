@@ -80,13 +80,15 @@
                                                 <ColumnDefinition Width="Auto" />
                                             </Grid.ColumnDefinitions>
                                             <TextBlock Grid.Column="0" HorizontalAlignment="Left"
-                                                       Text="{Binding Path=DisplayName}"
-                                                       Foreground="{StaticResource PopupForeground}">
+                                                       Text="{Binding Path=DisplayName}">
                                                 <TextBlock.Style>
                                                     <Style TargetType="TextBlock">
+                                                        <Style.Setters>
+                                                            <Setter Property="Foreground" Value="{StaticResource PopupForeground}"/>
+                                                        </Style.Setters>
                                                         <Style.Triggers>
                                                             <DataTrigger Binding="{Binding IsSelected}" Value="true">
-                                                                <Setter Property="Foreground" Value="DarkGreen"/>
+                                                                <Setter Property="Foreground" Value="{StaticResource PopupGreen}"/>
                                                                 <Setter Property="FontWeight" Value="Bold"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>

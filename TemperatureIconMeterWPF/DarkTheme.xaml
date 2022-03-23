@@ -4,4 +4,5 @@
     <SolidColorBrush x:Key="PopupForeground" Color="#F1F1F1"/>
     <SolidColorBrush x:Key="PopupHeader" Color="#66A4FF"/>
     <SolidColorBrush x:Key="PopupRed" Color="#FF0000"/>
+    <SolidColorBrush x:Key="PopupGreen" Color="#00DD00"/>
 </ResourceDictionary>
