@@ -7,7 +7,7 @@
         xmlns:tb="http://www.hardcodet.net/taskbar" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="TemperatureIconMeterWPF.MainWindow"
         mc:Ignorable="d"
         xmlns:properties="clr-namespace:TemperatureIconMeterWPF.Properties"
-        Title="Temperature Icon Meter" Height="440" Width="500" MinHeight="400" MinWidth="360" WindowStartupLocation="CenterScreen" Icon="icon.ico" Closing="Window_Closing" SizeToContent="Height">
+        Title="Temperature Icon Meter" Height="500" Width="500" MinHeight="500" MinWidth="360" WindowStartupLocation="CenterScreen" Icon="icon.ico" Closing="Window_Closing" SizeToContent="Height">
     <Window.DataContext>
         <local:MainViewModel/>
     </Window.DataContext>

@@ -39,9 +39,9 @@ namespace TemperatureIconMeterWPF
         // public method
         public void Update()
         {
-            if (sensor.Min.HasValue) Min = (float)sensor.Min;
-            if (sensor.Max.HasValue) Max = (float)sensor.Max;
-            if (sensor.Value.HasValue) Value = (float)sensor.Value;
+            if (sensor.Min.HasValue) Min = (float)Math.Round(sensor.Min.Value, 2);
+            if (sensor.Max.HasValue) Max = (float)Math.Round(sensor.Max.Value, 2);
+            if (sensor.Value.HasValue) Value = (float)Math.Round(sensor.Value.Value, 2);
         }
         public void ResetMinMaxReadings()
         {
