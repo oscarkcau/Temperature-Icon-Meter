@@ -60,15 +60,18 @@
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="cmp2F5EED07769D01188B6E1DDA2EC5B3FB" Guid="*">
         <File Id="filB15AFBDD7410AD56772D69B1FD1048A0" KeyPath="yes" Source="$(var.HarvestPath)\Hardcodet.NotifyIcon.Wpf.dll" />
-      </Component>		
+      </Component>
+      <Component Id="cmp8B6B824170531DA4ACCB267F3B3F8FF6" Guid="*">
+          <File Id="fil2BAF226DFAE1DC393DCE2619AB133832" KeyPath="yes" Source="$(var.HarvestPath)\HidSharp.dll" />
+      </Component>
+      <Component Id="cmpDF49FF1BBFC4DBBA940443AA48F221E9" Guid="*">
+          <File Id="fil8738EA1292C337E2EF06897AFF9E2FFC" KeyPath="yes" Source="$(var.HarvestPath)\HidSharp.pdb" />
+      </Component>
+      <Component Id="cmp692E0140D733544352A8979F188CDED8" Guid="*">
+          <File Id="filA90B3C2B7644D53FCAF1013FD1C0444A" KeyPath="yes" Source="$(var.HarvestPath)\LibreHardwareMonitorLib.dll" />
+      </Component>      
       <Component Id="cmp43984E66F2A9DD89F93CF7035D8989A0" Guid="*">
         <File Id="filD88CABA6D1DF77999CB7D426C4B617A4" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Win32.TaskScheduler.dll" />
-      </Component>
-      <Component Id="cmp36162545506C564646EFF7AED20D4D87" Guid="*">
-        <File Id="filA005E04D6C984A8EF36F9653B3FA4555" KeyPath="yes" Source="$(var.HarvestPath)\OpenHardwareMonitorLib.dll" />
-      </Component>
-      <Component Id="cmpB1E64B83A59AC916B9DDC1837635D99B" Guid="*">
-        <File Id="filC1BF8928A7B3074836B9FA4ADF1166FB" KeyPath="yes" Source="$(var.HarvestPath)\OpenHardwareMonitorLib.sys" />
       </Component>
       <Component Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" Guid="*">
         <File Id="filD2DFC1AC8B59387FDCB911C0EEA19B9E" KeyPath="yes" Source="$(var.HarvestPath)\TemperatureIconMeter.exe" >
@@ -195,9 +198,10 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <ComponentRef Id="cmp2F5EED07769D01188B6E1DDA2EC5B3FB" />
+      <ComponentRef Id="cmp8B6B824170531DA4ACCB267F3B3F8FF6" />
+      <ComponentRef Id="cmpDF49FF1BBFC4DBBA940443AA48F221E9" />
+      <ComponentRef Id="cmp692E0140D733544352A8979F188CDED8" />
       <ComponentRef Id="cmp43984E66F2A9DD89F93CF7035D8989A0" />
-      <ComponentRef Id="cmp36162545506C564646EFF7AED20D4D87" />
-      <ComponentRef Id="cmpB1E64B83A59AC916B9DDC1837635D99B" />
       <ComponentRef Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" />
       <ComponentRef Id="cmp87FCA64596655AB927DDEB1B6D9879AE" />
       <ComponentRef Id="cmpB5AC76F2952CC9DFFEAE55F2225097DA" />

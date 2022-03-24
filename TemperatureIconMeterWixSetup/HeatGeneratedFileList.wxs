@@ -5,14 +5,17 @@
             <Component Id="cmp2F5EED07769D01188B6E1DDA2EC5B3FB" Guid="*">
                 <File Id="filB15AFBDD7410AD56772D69B1FD1048A0" KeyPath="yes" Source="$(var.HarvestPath)\Hardcodet.NotifyIcon.Wpf.dll" />
             </Component>
+            <Component Id="cmp8B6B824170531DA4ACCB267F3B3F8FF6" Guid="*">
+                <File Id="fil2BAF226DFAE1DC393DCE2619AB133832" KeyPath="yes" Source="$(var.HarvestPath)\HidSharp.dll" />
+            </Component>
+            <Component Id="cmpDF49FF1BBFC4DBBA940443AA48F221E9" Guid="*">
+                <File Id="fil8738EA1292C337E2EF06897AFF9E2FFC" KeyPath="yes" Source="$(var.HarvestPath)\HidSharp.pdb" />
+            </Component>
+            <Component Id="cmp692E0140D733544352A8979F188CDED8" Guid="*">
+                <File Id="filA90B3C2B7644D53FCAF1013FD1C0444A" KeyPath="yes" Source="$(var.HarvestPath)\LibreHardwareMonitorLib.dll" />
+            </Component>
             <Component Id="cmp43984E66F2A9DD89F93CF7035D8989A0" Guid="*">
                 <File Id="filD88CABA6D1DF77999CB7D426C4B617A4" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Win32.TaskScheduler.dll" />
-            </Component>
-            <Component Id="cmp36162545506C564646EFF7AED20D4D87" Guid="*">
-                <File Id="filA005E04D6C984A8EF36F9653B3FA4555" KeyPath="yes" Source="$(var.HarvestPath)\OpenHardwareMonitorLib.dll" />
-            </Component>
-            <Component Id="cmpB1E64B83A59AC916B9DDC1837635D99B" Guid="*">
-                <File Id="filC1BF8928A7B3074836B9FA4ADF1166FB" KeyPath="yes" Source="$(var.HarvestPath)\OpenHardwareMonitorLib.sys" />
             </Component>
             <Component Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" Guid="*">
                 <File Id="filD2DFC1AC8B59387FDCB911C0EEA19B9E" KeyPath="yes" Source="$(var.HarvestPath)\TemperatureIconMeter.exe" />
@@ -85,143 +88,6 @@
                     <File Id="fil191AFECD354E11F36FD7B9C3550A8C3C" KeyPath="yes" Source="$(var.HarvestPath)\ja-JP\Xceed.Wpf.AvalonDock.resources.dll" />
                 </Component>
             </Directory>
-            <Directory Id="dirEC8BD72ABA06A1D2B29D35791CDBBACF" Name="netcoreapp3.1">
-                <Component Id="cmp01FF6CDD8BE55128AC8ABB99AB121787" Guid="*">
-                    <File Id="fil84F0DF54D5EC05A4ABC753ED04170A52" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Hardcodet.Wpf.TaskbarNotification.dll" />
-                </Component>
-                <Component Id="cmp98E22D076B106FA65A26D9A04FE49F38" Guid="*">
-                    <File Id="fil0C0A1D5FEA588D6963060292F5771306" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Microsoft.Win32.TaskScheduler.dll" />
-                </Component>
-                <Component Id="cmpB2643C831A6EFB40021ABB61D1E97046" Guid="*">
-                    <File Id="filAE7A1794BC31B55FD9AA59F6E12037C2" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\OpenHardwareMonitorLib.dll" />
-                </Component>
-                <Component Id="cmp81C6EA5BB7A9486ED3428B77326EAFCF" Guid="*">
-                    <File Id="fil1E74609AACD95BF4F8CF8B99AEA37766" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.deps.json" />
-                </Component>
-                <Component Id="cmpC6A7888770A83651548F8C91EB6DF593" Guid="*">
-                    <File Id="filB7A3CC475E66B35AB1A4C3FA870E4A27" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.dll" />
-                </Component>
-                <Component Id="cmpA66050901248522475B358E303830A9C" Guid="*">
-                    <File Id="fil3E6FF029547427183C2D17D878CBC9AF" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.dll.config" />
-                </Component>
-                <Component Id="cmp39FA9161F9F9811C02F8BA7E0D531334" Guid="*">
-                    <File Id="filC7884C03FFBFBA3ECFE8FC90AD72DB00" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.exe" />
-                </Component>
-                <Component Id="cmpC59243DA51F7C29D345727704614CC64" Guid="*">
-                    <File Id="filBC310C5232E26B3D98A5FF4752A275B4" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.runtimeconfig.dev.json" />
-                </Component>
-                <Component Id="cmpC406062E9F25FB15CB0B187BEA4F5303" Guid="*">
-                    <File Id="filC4A64464C9650D1C14209C3AB2E66DB3" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\TemperatureIconMeter.runtimeconfig.json" />
-                </Component>
-                <Component Id="cmp8C3A6AC258D8C6D1C9686655C3F3A217" Guid="*">
-                    <File Id="fil705A63069D584B999CF6ED4381E6166F" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Xceed.Wpf.AvalonDock.dll" />
-                </Component>
-                <Component Id="cmpB07E5D34E1AF1C9DB8BDE5EB8303915D" Guid="*">
-                    <File Id="fil5C8FD7799E464F173CC99773BE4C15B6" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Aero.dll" />
-                </Component>
-                <Component Id="cmp02FB1635FA403110D212CF25EE421977" Guid="*">
-                    <File Id="filF4CED44E9AD1F26681B095934E3D4CB2" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.Metro.dll" />
-                </Component>
-                <Component Id="cmpB050D15E398C9A9F723A6614456F7975" Guid="*">
-                    <File Id="fil79DD272DE13A84BEEFA37E0098DF4311" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Xceed.Wpf.AvalonDock.Themes.VS2010.dll" />
-                </Component>
-                <Component Id="cmp564818AC5D34E114FDB4253BA8408FDA" Guid="*">
-                    <File Id="filE3DD52BEBEA1DD4BD547D7F3E0AA5FF5" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\Xceed.Wpf.Toolkit.dll" />
-                </Component>
-                <Directory Id="dir802C08B5C6D07D31AAE3DDD3B3E5F76A" Name="cs-CZ">
-                    <Component Id="cmpD06185652AE6B6FD3BCAAE3CA1441DBA" Guid="*">
-                        <File Id="fil7490F61582C762B10013C3D6D639E10E" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirE790111E2407CC67726ED8CF42758856" Name="de">
-                    <Component Id="cmp9707F696D8D5B55C4E466E33A8000D24" Guid="*">
-                        <File Id="fil1B374A6560C3FB02FAE4CF84EBB4CE7C" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\de\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmpDFFFA312EC37B57BC0BF25EA255D9012" Guid="*">
-                        <File Id="filDAE71FF6E7914637B92A8E8C8501DC38" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirE5E217028D2B70A3E512CEF8CEA9F905" Name="es">
-                    <Component Id="cmp6A7A3AC4DA9B24FC37468613ADF36674" Guid="*">
-                        <File Id="filC45549C08577A092E45B408DF870AA6A" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\es\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmp16A7FC36E2C66BCB9C6FE45BD9832F31" Guid="*">
-                        <File Id="fil27A94C71FABB0E1DB9C04AD16F249650" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\es\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir1217A1058B96E7F82D49D7B5DD2AC0E1" Name="fr">
-                    <Component Id="cmp1F915DA0E2B0A0C0F07AECE7FAAADC9E" Guid="*">
-                        <File Id="fil2A00D41323BE31E34A05B9A1641F6026" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\fr\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmp17287D4C5275E1D93306137BA3358E32" Guid="*">
-                        <File Id="fil731BE5641560D100D82815290F15BC91" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\fr\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirAAEC821AE684BCAC6106252E20A054D6" Name="hu">
-                    <Component Id="cmp8B922332D75667C8BA096F3E878D9520" Guid="*">
-                        <File Id="filE8BC9BAAE8A4878D92B6929A9B40A89F" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\hu\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir6A63AB5561F54816DE2CF2FF3B7FDAC8" Name="it">
-                    <Component Id="cmp1AD572413D4449654C6FD42BB7B386BD" Guid="*">
-                        <File Id="fil02AEDB6D059E405DBE548CC9FC76221C" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\it\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmp901168B532ADACA0377851D46B4DF5D7" Guid="*">
-                        <File Id="filC340BCBA43FEBE5F356D97FDE761D4C8" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\it\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirF37168355B695B59240E04CFCD491D95" Name="ja-JP">
-                    <Component Id="cmp7929D97F3605EFD7E85B0143DD33A6FD" Guid="*">
-                        <File Id="filA7B260363D3C429825DB1BB354D67C7D" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\ja-JP\TemperatureIconMeter.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir02BEAE5F8C3ABAE30D08D16EEB0E0EB7" Name="pl">
-                    <Component Id="cmpEB4B58CEC966A45B49E265C37FA0E730" Guid="*">
-                        <File Id="fil7B7256D6C4DE1A5974CA4D86C4B7C87C" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\pl\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir44FF5DF36B6FFD45B0B2F1146509BAC1" Name="pt-BR">
-                    <Component Id="cmp5688426CACF621E51D60DDA5F2E3E72C" Guid="*">
-                        <File Id="fil5CC3F0CF9EBC346B98D0D2065E2F1574" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\pt-BR\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir148F1439432D5AE6862128C18E74F3DE" Name="ro">
-                    <Component Id="cmp0B4124E6E6A3D35D68A3EA46B50969ED" Guid="*">
-                        <File Id="filA4597DB707790893ABA8CDA45B4A026A" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\ro\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir8B8A93046B8CEEB0ABF41A8C4B7C47BB" Name="ru">
-                    <Component Id="cmp4F7AC0B1BD1019B4DF555371C41C9603" Guid="*">
-                        <File Id="fil45452F7CD7A9D4E25CF8A99463424A0B" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\ru\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmpBD9A20F71B0135E0CE3ACC3D4C041FE9" Guid="*">
-                        <File Id="fil0BEA79B0CDAD2C43CB31EB568C3B8382" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dir01498CF9191ECA3F17A5A2C81C411531" Name="sv">
-                    <Component Id="cmp64B62E5888A3CCF7B87A2918D8BC277D" Guid="*">
-                        <File Id="fil7B09892B422CCE0A35735BAD663BDA53" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirC548E3CA80CFCD84AC3A92E791AFEA70" Name="zh">
-                    <Component Id="cmpA1B9D18ACA4F4ECF4858B1ABD935F76E" Guid="*">
-                        <File Id="fil554D340B1DD6E4B4C37186736D2944C5" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\zh\TemperatureIconMeter.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirBF180F7DEC6C8DC162D8BBF38B412FF7" Name="zh-CN">
-                    <Component Id="cmp1323DEC8D14B4AE1D200DBEC80C42A86" Guid="*">
-                        <File Id="fil590A508AED337AD7191BEB079DE300DC" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll" />
-                    </Component>
-                    <Component Id="cmp5E02E59CD20DA5C7F7DB15F94AB53FD1" Guid="*">
-                        <File Id="filCF52AFE8B0CE2C8195F4C2D29D7586B9" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\zh-CN\TemperatureIconMeter.resources.dll" />
-                    </Component>
-                </Directory>
-                <Directory Id="dirED36C97A5A98C3D0A02BF4D038472D2E" Name="zh-Hans">
-                    <Component Id="cmpF229DA159E42CA26844C4F09A532391E" Guid="*">
-                        <File Id="filC5B300ACF17BA56C0DA1EF08B9ED606E" KeyPath="yes" Source="$(var.HarvestPath)\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll" />
-                    </Component>
-                </Directory>
-            </Directory>
             <Directory Id="dirB6C57608593BDEA87B90E388CF59E0E8" Name="pl">
                 <Component Id="cmp3A774BB34CD3664183116E92839E312E" Guid="*">
                     <File Id="filD9A2B76568404A4B8808FEB413DBCC95" KeyPath="yes" Source="$(var.HarvestPath)\pl\Microsoft.Win32.TaskScheduler.resources.dll" />
@@ -268,14 +134,20 @@
                     <File Id="fil6EE1E4B1FB2A7DF0A95E3D283E73ADFA" KeyPath="yes" Source="$(var.HarvestPath)\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll" />
                 </Component>
             </Directory>
+            <Directory Id="dir083BC4C92455CD933FA93376E7459C85" Name="zh-Hant">
+                <Component Id="cmpD645C30459FCD3E6544F8CAF6388758A" Guid="*">
+                    <File Id="fil97D3E9833BD09665291FEB6C2247FF60" KeyPath="yes" Source="$(var.HarvestPath)\zh-Hant\Microsoft.Win32.TaskScheduler.resources.dll" />
+                </Component>
+            </Directory>
         </DirectoryRef>
     </Fragment>
     <Fragment>
         <ComponentGroup Id="HeatGenerated">
             <ComponentRef Id="cmp2F5EED07769D01188B6E1DDA2EC5B3FB" />
+            <ComponentRef Id="cmp8B6B824170531DA4ACCB267F3B3F8FF6" />
+            <ComponentRef Id="cmpDF49FF1BBFC4DBBA940443AA48F221E9" />
+            <ComponentRef Id="cmp692E0140D733544352A8979F188CDED8" />
             <ComponentRef Id="cmp43984E66F2A9DD89F93CF7035D8989A0" />
-            <ComponentRef Id="cmp36162545506C564646EFF7AED20D4D87" />
-            <ComponentRef Id="cmpB1E64B83A59AC916B9DDC1837635D99B" />
             <ComponentRef Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" />
             <ComponentRef Id="cmp87FCA64596655AB927DDEB1B6D9879AE" />
             <ComponentRef Id="cmpB5AC76F2952CC9DFFEAE55F2225097DA" />
@@ -295,41 +167,6 @@
             <ComponentRef Id="cmp0B9527E49327DF46736C8F6F58634C01" />
             <ComponentRef Id="cmp8B4A36BDCC6AB7ECFDC34025BF261B6C" />
             <ComponentRef Id="cmp7746FE0DEDBE5684F977FE2DB4787E3E" />
-            <ComponentRef Id="cmp01FF6CDD8BE55128AC8ABB99AB121787" />
-            <ComponentRef Id="cmp98E22D076B106FA65A26D9A04FE49F38" />
-            <ComponentRef Id="cmpB2643C831A6EFB40021ABB61D1E97046" />
-            <ComponentRef Id="cmp81C6EA5BB7A9486ED3428B77326EAFCF" />
-            <ComponentRef Id="cmpC6A7888770A83651548F8C91EB6DF593" />
-            <ComponentRef Id="cmpA66050901248522475B358E303830A9C" />
-            <ComponentRef Id="cmp39FA9161F9F9811C02F8BA7E0D531334" />
-            <ComponentRef Id="cmpC59243DA51F7C29D345727704614CC64" />
-            <ComponentRef Id="cmpC406062E9F25FB15CB0B187BEA4F5303" />
-            <ComponentRef Id="cmp8C3A6AC258D8C6D1C9686655C3F3A217" />
-            <ComponentRef Id="cmpB07E5D34E1AF1C9DB8BDE5EB8303915D" />
-            <ComponentRef Id="cmp02FB1635FA403110D212CF25EE421977" />
-            <ComponentRef Id="cmpB050D15E398C9A9F723A6614456F7975" />
-            <ComponentRef Id="cmp564818AC5D34E114FDB4253BA8408FDA" />
-            <ComponentRef Id="cmpD06185652AE6B6FD3BCAAE3CA1441DBA" />
-            <ComponentRef Id="cmp9707F696D8D5B55C4E466E33A8000D24" />
-            <ComponentRef Id="cmpDFFFA312EC37B57BC0BF25EA255D9012" />
-            <ComponentRef Id="cmp6A7A3AC4DA9B24FC37468613ADF36674" />
-            <ComponentRef Id="cmp16A7FC36E2C66BCB9C6FE45BD9832F31" />
-            <ComponentRef Id="cmp1F915DA0E2B0A0C0F07AECE7FAAADC9E" />
-            <ComponentRef Id="cmp17287D4C5275E1D93306137BA3358E32" />
-            <ComponentRef Id="cmp8B922332D75667C8BA096F3E878D9520" />
-            <ComponentRef Id="cmp1AD572413D4449654C6FD42BB7B386BD" />
-            <ComponentRef Id="cmp901168B532ADACA0377851D46B4DF5D7" />
-            <ComponentRef Id="cmp7929D97F3605EFD7E85B0143DD33A6FD" />
-            <ComponentRef Id="cmpEB4B58CEC966A45B49E265C37FA0E730" />
-            <ComponentRef Id="cmp5688426CACF621E51D60DDA5F2E3E72C" />
-            <ComponentRef Id="cmp0B4124E6E6A3D35D68A3EA46B50969ED" />
-            <ComponentRef Id="cmp4F7AC0B1BD1019B4DF555371C41C9603" />
-            <ComponentRef Id="cmpBD9A20F71B0135E0CE3ACC3D4C041FE9" />
-            <ComponentRef Id="cmp64B62E5888A3CCF7B87A2918D8BC277D" />
-            <ComponentRef Id="cmpA1B9D18ACA4F4ECF4858B1ABD935F76E" />
-            <ComponentRef Id="cmp1323DEC8D14B4AE1D200DBEC80C42A86" />
-            <ComponentRef Id="cmp5E02E59CD20DA5C7F7DB15F94AB53FD1" />
-            <ComponentRef Id="cmpF229DA159E42CA26844C4F09A532391E" />
             <ComponentRef Id="cmp3A774BB34CD3664183116E92839E312E" />
             <ComponentRef Id="cmp78E3AC4B6177179C5F50ECB1A8B16D85" />
             <ComponentRef Id="cmp1540E6C17030090C628A142AB815893D" />
@@ -340,6 +177,7 @@
             <ComponentRef Id="cmpFA6D9FD1AAA2046A7577475784CE8BCC" />
             <ComponentRef Id="cmp3FE96D0210F57B2467FCBB3F6AF6AF2F" />
             <ComponentRef Id="cmp11A3FE50B66CC04F854A4486A5199C89" />
+            <ComponentRef Id="cmpD645C30459FCD3E6544F8CAF6388758A" />
         </ComponentGroup>
     </Fragment>
 </Wix>
