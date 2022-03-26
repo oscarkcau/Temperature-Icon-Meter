@@ -4,8 +4,12 @@ This is a by-product of my another project [Icon-Meter](https://oscarkcau.github
 Temperature Icon Meter has the following features:
 
 <img src="taskbar_capture.png" width="312"/>
+
 <img src="popup_capture.png" width="260"/>
 
+*Popup window shows all detected temperature readings.*
+
+* (Version 2.3.3) Replace the discontinued third-party library [OpenHardwareMonitor](https://github.com/openhardwaremonitor/openhardwaremonitor) with [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor), now **Temperature Icon Meter** can support many more recent hardware and devices. Add new dark color mode for popup window, and remove pin button to simplify user input.
 * (Version 2.3.2) Provide buttons for moving popup window and pinning popup window on top.
 * (Version 2.3.1) Introduce popup window to replace simple tooltip text and display all detected temperature information.
 * (Version 2.1) Multi-language support (traditional Chinese, simplified Chinese, English and Japanese).
@@ -33,5 +37,5 @@ Download and run the latest [installer](https://github.com/oscarkcau/Temperature
 
 ## Important Notes
 * Temperature Icon Meter needs user to confirm the UAC (User Account Control) prompt during its first run, and it should start automatically without interruption next time if you enable the **Run at Startup** option.
-* Temperature Icon Meter may not be able to detect all temperature sensors of any system and ensure all sensors report the correct temperature readings, since all readings are collected via the third-party library provied by [Open Hardware Monitor](https://github.com/openhardwaremonitor/openhardwaremonitor). To support more and newer hardward, if possible I will provide new versions of Temperature Icon Meter when there is a new update of the external library. For the full list of supported hardward, please visit the website of [Open Hardware Monitor](https://openhardwaremonitor.org/documentation/)
+* Temperature Icon Meter may not be able to detect all temperature sensors of any system and ensure all sensors report the correct temperature readings, since all readings are collected via the third-party library [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor). To support more and newer hardward, new versions of Temperature Icon Meter will be provided when there is a new update of the external library. For the full list of supported hardward, please visit the page of [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor).
 
