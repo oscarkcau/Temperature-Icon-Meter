@@ -17,6 +17,9 @@
             <Component Id="cmp43984E66F2A9DD89F93CF7035D8989A0" Guid="*">
                 <File Id="filD88CABA6D1DF77999CB7D426C4B617A4" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Win32.TaskScheduler.dll" />
             </Component>
+            <Component Id="cmp627F95934DFE8795F8708045A2120F23" Guid="*">
+                <File Id="filAEAF8C61AA86723A95F0986173532954" KeyPath="yes" Source="$(var.HarvestPath)\System.CodeDom.dll" />
+            </Component>
             <Component Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" Guid="*">
                 <File Id="filD2DFC1AC8B59387FDCB911C0EEA19B9E" KeyPath="yes" Source="$(var.HarvestPath)\TemperatureIconMeter.exe" />
             </Component>
@@ -80,12 +83,22 @@
                     <File Id="fil0B4AABB0E6DE194FF7BBE1F51933E675" KeyPath="yes" Source="$(var.HarvestPath)\it\Xceed.Wpf.AvalonDock.resources.dll" />
                 </Component>
             </Directory>
+            <Directory Id="dir997B58958EFAE06BB705E870622AB899" Name="ja">
+                <Component Id="cmp3D72238A6D7AD92E0D5021F0EC29151C" Guid="*">
+                    <File Id="fil620F9558364F78A25725638DA9035310" KeyPath="yes" Source="$(var.HarvestPath)\ja\Microsoft.Win32.TaskScheduler.resources.dll" />
+                </Component>
+            </Directory>
             <Directory Id="dir491F4D4E37AD7E1BE6B3D0E7F3A72AD8" Name="ja-JP">
                 <Component Id="cmp8B4A36BDCC6AB7ECFDC34025BF261B6C" Guid="*">
                     <File Id="fil36D586CE1737226D1901A0D3D01404E7" KeyPath="yes" Source="$(var.HarvestPath)\ja-JP\TemperatureIconMeter.resources.dll" />
                 </Component>
                 <Component Id="cmp7746FE0DEDBE5684F977FE2DB4787E3E" Guid="*">
                     <File Id="fil191AFECD354E11F36FD7B9C3550A8C3C" KeyPath="yes" Source="$(var.HarvestPath)\ja-JP\Xceed.Wpf.AvalonDock.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir4B74599EEC7C992EE101A3FAC2E3F9DA" Name="nl-BE">
+                <Component Id="cmp07503BD29D47F33D182921BEA0700F92" Guid="*">
+                    <File Id="fil9FECFA5164130AA230A03ACC56D253FC" KeyPath="yes" Source="$(var.HarvestPath)\nl-BE\Xceed.Wpf.AvalonDock.resources.dll" />
                 </Component>
             </Directory>
             <Directory Id="dirB6C57608593BDEA87B90E388CF59E0E8" Name="pl">
@@ -112,8 +125,16 @@
                 </Component>
             </Directory>
             <Directory Id="dir8FBB04D7AB5FE55FCF40758128EC763E" Name="sv">
+                <Component Id="cmp46F534D4A96EBCEC3A215413CD503C6F" Guid="*">
+                    <File Id="fil417252A960AE9F73A56232157B353134" KeyPath="yes" Source="$(var.HarvestPath)\sv\Microsoft.Win32.TaskScheduler.resources.dll" />
+                </Component>
                 <Component Id="cmpC21D9CCB5856693FB3CE2A23AFB7DD83" Guid="*">
                     <File Id="fil75EA045A69F3E238DA47EBBABBF5DCD8" KeyPath="yes" Source="$(var.HarvestPath)\sv\Xceed.Wpf.AvalonDock.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirE562A4656FE03253EA39D17E8127BA05" Name="tr">
+                <Component Id="cmpE83826CAE71515CD88AE3A3ED558DFCC" Guid="*">
+                    <File Id="filDCB7A9ACD169031800461AE0529179BB" KeyPath="yes" Source="$(var.HarvestPath)\tr\Microsoft.Win32.TaskScheduler.resources.dll" />
                 </Component>
             </Directory>
             <Directory Id="dirAFDFAB8989A0B2FA3B5E468F44862509" Name="zh">
@@ -148,6 +169,7 @@
             <ComponentRef Id="cmpDF49FF1BBFC4DBBA940443AA48F221E9" />
             <ComponentRef Id="cmp692E0140D733544352A8979F188CDED8" />
             <ComponentRef Id="cmp43984E66F2A9DD89F93CF7035D8989A0" />
+            <ComponentRef Id="cmp627F95934DFE8795F8708045A2120F23" />
             <ComponentRef Id="cmpB0CB26D6DC0F3FDF1DEB2F2F81B55499" />
             <ComponentRef Id="cmp87FCA64596655AB927DDEB1B6D9879AE" />
             <ComponentRef Id="cmpB5AC76F2952CC9DFFEAE55F2225097DA" />
@@ -165,14 +187,18 @@
             <ComponentRef Id="cmpFB118A47202A6B98ED49B3C952C22F35" />
             <ComponentRef Id="cmpA2349B128022FD9468B4B0472DF8814A" />
             <ComponentRef Id="cmp0B9527E49327DF46736C8F6F58634C01" />
+            <ComponentRef Id="cmp3D72238A6D7AD92E0D5021F0EC29151C" />
             <ComponentRef Id="cmp8B4A36BDCC6AB7ECFDC34025BF261B6C" />
             <ComponentRef Id="cmp7746FE0DEDBE5684F977FE2DB4787E3E" />
+            <ComponentRef Id="cmp07503BD29D47F33D182921BEA0700F92" />
             <ComponentRef Id="cmp3A774BB34CD3664183116E92839E312E" />
             <ComponentRef Id="cmp78E3AC4B6177179C5F50ECB1A8B16D85" />
             <ComponentRef Id="cmp1540E6C17030090C628A142AB815893D" />
             <ComponentRef Id="cmpC873D207335D245293F8991C675338F3" />
             <ComponentRef Id="cmp0D4BE05FC1DE55590C9709CA01911525" />
+            <ComponentRef Id="cmp46F534D4A96EBCEC3A215413CD503C6F" />
             <ComponentRef Id="cmpC21D9CCB5856693FB3CE2A23AFB7DD83" />
+            <ComponentRef Id="cmpE83826CAE71515CD88AE3A3ED558DFCC" />
             <ComponentRef Id="cmpD5FA0DC7B58C0DB9DA5B9CD90CAFE448" />
             <ComponentRef Id="cmpFA6D9FD1AAA2046A7577475784CE8BCC" />
             <ComponentRef Id="cmp3FE96D0210F57B2467FCBB3F6AF6AF2F" />

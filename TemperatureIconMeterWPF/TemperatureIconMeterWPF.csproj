@@ -198,16 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit">
-      <Version>4.2.0</Version>
+      <Version>4.7.25104.5739</Version>
     </PackageReference>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf">
-      <Version>1.1.0</Version>
+      <Version>2.0.1</Version>
     </PackageReference>
     <PackageReference Include="LibreHardwareMonitorLib">
-      <Version>0.8.9</Version>
+      <Version>0.9.4</Version>
     </PackageReference>
     <PackageReference Include="TaskScheduler">
-      <Version>2.10.1</Version>
+      <Version>2.12.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
